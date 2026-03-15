@@ -3,6 +3,8 @@ import Home from "./components/pages/Home"
 import About from "./components/pages/About"
 import Skill from "./components/pages/Skill"
 import ContactForm from "./components/pages/ContactForm"
+import Education from "./components/pages/Education"
+import Project from "./components/pages/Project"
 function App() {
   
 
@@ -13,6 +15,8 @@ function App() {
       <Home/>
       <About/>
       <Skill/>
+      <Education/>
+      <Project/>
       <ContactForm/>
 
     </div>
