@@ -19,9 +19,10 @@ const Home = () => {
   return (
     <div id='home'>
       <div className="left">
-       <h1>Hii i'm Shatrudhan</h1>
+       <h1>Hii </h1>
+       <h1>i'm Shatrudhan</h1>
        <h2>i'm a <span ref={typingRef}     className='auto-type'></span></h2>
-       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p>
+       {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
        <div className="social-icon">
         <i class="ri-github-fill"></i>
         <i class="ri-linkedin-fill"></i>

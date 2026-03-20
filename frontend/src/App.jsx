@@ -5,6 +5,8 @@ import Skill from "./components/pages/Skill"
 import ContactForm from "./components/pages/ContactForm"
 import Education from "./components/pages/Education"
 import Project from "./components/pages/Project"
+import Footer from "./components/pages/Footer"
+
 function App() {
   
 
@@ -18,6 +20,7 @@ function App() {
       <Education/>
       <Project/>
       <ContactForm/>
+      <Footer/>
 
     </div>
   )
