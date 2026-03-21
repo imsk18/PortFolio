@@ -12,7 +12,7 @@ const Footer = () => {
        </div>
 
        <div className="quick-link">
-        <h4>quick links</h4>
+        <h4>quick linksc</h4>
 
        </div>
        <div className="contact-info">
@@ -33,7 +33,7 @@ const Footer = () => {
       </div>
       
        <hr />
-        <h5>design with ❤️ by sk</h5>
+        <small>design with ❤️ by sk</small>
     </div>
   )
 }

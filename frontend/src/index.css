@@ -27,7 +27,7 @@ body{
 .all-links {
   display: flex;
 gap: clamp(1rem, 4vw, 3rem);
-font-size: clamp(0.8rem, 2vw, 1.2rem);
+font-size: clamp(0.8rem, 2vw, 1rem);
 
 }
 .all-links a{
@@ -114,12 +114,14 @@ font-size: clamp(0.8rem, 2vw, 1.2rem);
   width: 50vw;
   padding-top: 1rem;
   display: flex;
-  justify-content: end;
-  align-items: center;
+  /* justify-content: end; */
+  /* align-items: center; */
+  flex-wrap: wrap;
+  position: relative;
 }
 
 .img img{
-  height: 400px;
+  height: 150px;
   width: 250px;
   object-fit: contain;
   
@@ -139,16 +141,18 @@ font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 .header{
   width: 100%;
+  height: fit-content;
   display: flex;
   justify-content: center;
-  /* position: absolute; */
+  background-color: #c92f2f;
+  position: absolute;
   
   
 }
 
 
 
-
+/* 
 
 #skill{
   height: 100vh;
@@ -176,12 +180,12 @@ font-size: clamp(0.8rem, 2vw, 1.2rem);
   display: flex;
   flex-direction: column;
   /* align-items: center; */
-  width: 100%;
+  /* width: 100%;
   gap: 0.5rem;
   margin: 1rem;
   padding-left: 2rem;
-}
-.outer-line{
+} */
+/* .outer-line{
   height: 4px;
   width: 60%;
   background-color: #f0e4e4;
@@ -190,24 +194,61 @@ font-size: clamp(0.8rem, 2vw, 1.2rem);
   height: 4px;
   width: 0;
   background-color: #ba5c5c;
-}
-.skl img{
+} */
+/* .skl img{
   height: 50px;
   width: 50px;
   object-fit: cover;
   border-radius: 50%;
   position: absolute;
   /* left: 30%; */
-  left: 0%;
+  /* left: 0%; */
   
-}
 
 
+
+
+
+
+  #skill{
+    height: 100vh;
+    width: 100%;
+    background-color: #085152;
+    display: flex;
+  }
+  .frontend{
+     width: 50%;
+    display: flex;
+    gap: 1rem;
+    
+    padding-top: 2rem;
+   
+  }
+  .backend{
+    width: 50%;
+    display: flex;
+   
+    gap: 1rem;
+    padding-top: 2rem;
+  }
+  #skill img{
+    height: 100px;
+    width: 100px;
+    background-color: #fff;
+    border-radius: 40%;
+    padding: 0.5rem;
+  }
+  .skill-card small{
+  display: flex;
+  flex-direction: column;
+  
+
+  } 
 
 
 #contact{
   height: 100vh;
-  width: 100vw;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -312,6 +353,7 @@ form input{
   justify-content: center;
   gap: 1rem; 
    flex-wrap: wrap;
+   background-color: blueviolet;
 }
 .card{
   height: 200px;
@@ -351,17 +393,18 @@ form input{
 /* footer page */
 
 #footer{
-  height: 30vh;
+  height: 50vh;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  font-size: clamp(0.8rem, 2vw, 1.2rem);
 }
 .f-container{
   display: flex;
   justify-content: space-around;
 }
-h5{
+small{
   text-align: center;
 }
 

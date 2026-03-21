@@ -9,6 +9,9 @@ const About = () => {
    
       <div className="img">
          <img src="./public/s.jpg" alt="" />
+         <img src="./public/s.jpg" alt="" />
+         <img src="./public/s.jpg" alt="" />
+         <img src="./public/s.jpg" alt="" />
       </div>
 
       <div className="about-info">

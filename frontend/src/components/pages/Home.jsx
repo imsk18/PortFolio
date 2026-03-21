@@ -4,7 +4,7 @@ import Typed from 'typed.js'
 const Home = () => {
   const typingRef = useRef(null)
   useEffect(()=>{
-    const typed = new Typed(typingRef.current,{strings: ["developer","web developer"],
+    const typed = new Typed(typingRef.current,{strings: ["Full stack developer","MERN stack developer","Backend developer","Frontend developer"],
       typeSpeed:150,
       backSpeed:50,
       loop:true
