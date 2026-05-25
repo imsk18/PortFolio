@@ -1,26 +1,48 @@
 import React from 'react'
+import '../styles/about.css';
+import ScrollingLine from '../components/ScrollingLine';
 
 const About = () => {
   return (
+    
     <div id='about'>
       <div className="header">
-           <h1 className='a-h1' >about</h1>
+           <h1 className='a-h1' >About</h1>
       </div>
    
-      <div className="img">
+      <div className="img-container">
+
+        <div className="right-img">
+          <img src="./public/s.jpg" alt="" />
          <img src="./public/s.jpg" alt="" />
+        </div>
+
+        <div className="left-img">
+           {/* <img src="./public/s.jpg" alt="" /> */}
          <img src="./public/s.jpg" alt="" />
-         <img src="./public/s.jpg" alt="" />
-         <img src="./public/s.jpg" alt="" />
+        </div>
+       
+        
+       
       </div>
 
       <div className="about-info">
-        <h3>i'm shatrudhan</h3>
+        <div className="upper">
+           <h3>I'm Shatrudhan</h3>
         <h4>fullstack developer</h4>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quae quasi iure. Temporibus natus delectus dignissimos dolorum labore distinctio, incidunt dolore commodi vel. Harum exercitationem dolor, quis tempora quos eius molestiae laudantium ullam quae consequatur sapiente cupiditate facilis facere.</p>
-        <span>place: <a href="">bihar</a></span>
-        <a href="">email: <span>kumar@gmail.com</span></a>
+        </div>
+        <div className="middle">
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quae quasi iure. Temporibus natus delectus dignissimos dolorum labore distinctio, incidunt dolore commodi vel. Harum exercitationem dolor, quis tempora quos eius molestiae laudantium ullam quae consequatur sapiente cupiditate facilis facere.</p>
+        </div>
+       <div className="info">
+         <span>place: <a href="">bihar</a></span>
+        <span>email: <a href="">kumarshatrudhan94263@gmail.com</a></span>
+       </div>
+       
+       
+       
       </div>
+      <ScrollingLine />
     </div>
   )
 }

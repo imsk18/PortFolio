@@ -1,0 +1,348 @@
+/* 
+#Project{
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem; 
+   flex-wrap: wrap;
+   background-color: blueviolet;
+}
+.card{
+  height: 200px;
+  width: 200px;
+  overflow: hidden;
+
+   
+  position: relative;
+}
+.card img{
+  height:auto  ;
+  width: 20vw;
+  object-fit: cover;
+}
+.bottom{
+  height: 40%;
+  width: 100%;
+  position: absolute;
+ bottom: -40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  gap: 2rem;
+  background: linear-gradient(transparent,rgb(18, 17, 18));
+  transition: 1s all;
+}
+.card:hover{
+  .bottom{
+   bottom: 0;
+  }
+
+}
+@media (max-width:600px) {
+ 
+
+
+  #Project{
+    display: none;
+  
+
+   } 
+  .card{
+    height: 100px;
+    width: 15vw;
+  }
+  .card img{
+    height: 150px;
+    width: 35vw;
+  }
+
+  .bottom{
+    width: 25vw;
+  } 
+ 
+} */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  overflow-x:hidden;
+  background:#0f172a;
+  font-family:Inter,sans-serif;
+}
+
+/* =========================
+   MAIN
+========================= */
+
+.main{
+
+  height:100vh;
+
+  position:relative;
+
+  overflow:hidden;
+
+  background:
+  radial-gradient(
+    circle at top,
+    #1e293b,
+    #0f172a 70%
+  );
+}
+
+/* GRID */
+
+.main::before{
+
+  content:"";
+
+  position:absolute;
+
+  inset:0;
+
+  background-image:
+
+  linear-gradient(
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px
+  ),
+
+  linear-gradient(
+    to right,
+    rgba(255,255,255,0.04) 1px,
+    transparent 1px
+  );
+
+  background-size:50px 50px;
+
+  opacity:0.35;
+
+  pointer-events:none;
+}
+
+/* =========================
+   HEADING
+========================= */
+
+.project-heading{
+
+  position:relative;
+
+  z-index:5;
+
+  text-align:center;
+
+  color:white;
+
+  font-size:clamp(2rem,5vw,5rem);
+
+  font-weight:900;
+
+  letter-spacing:4px;
+
+  padding-top:1rem;
+}
+
+/* =========================
+   SVG
+========================= */
+
+.project-svg{
+
+  width:100%;
+
+  height:100%;
+
+  position:absolute;
+
+  inset:0;
+}
+
+/* =========================
+   CARDS
+========================= */
+
+.cards{
+
+  position:absolute;
+
+  inset:0;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.card{
+
+  width:210px;
+
+  height:280px;
+
+  background:
+  rgba(20,25,60,0.96);
+
+  border-radius:28px;
+
+  padding:1rem;
+
+  color:white;
+
+  display:flex;
+
+  flex-direction:column;
+
+  justify-content:space-between;
+
+  backdrop-filter:blur(10px);
+
+  border:
+  1px solid rgba(255,255,255,0.08);
+
+  box-shadow:
+  0 24px 50px rgba(0,0,0,0.25);
+}
+
+/* =========================
+   MEDIA
+========================= */
+
+.card-media{
+
+  height:65%;
+
+  display:grid;
+
+  place-items:center;
+
+  border-radius:20px;
+
+  background:
+  rgba(255,255,255,0.05);
+}
+
+.card-media img{
+
+  width:85px;
+
+  object-fit:contain;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.card-info{
+
+  display:flex;
+
+  flex-direction:column;
+
+  gap:0.8rem;
+}
+
+.card-info h3{
+
+  font-size:1rem;
+
+  font-weight:700;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.card-info button{
+
+  border:none;
+
+  border-radius:999px;
+
+  padding:0.8rem 1rem;
+
+  background:white;
+
+  color:#111;
+
+  font-weight:700;
+
+  cursor:pointer;
+
+  transition:0.3s ease;
+}
+
+.card-info button:hover{
+
+  background:#38bdf8;
+
+  color:white;
+
+  transform:translateY(-2px);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width:768px){
+
+  .main{
+
+    height:100vh;
+  }
+
+  /* HIDE CURVE */
+
+  .project-svg{
+    display:none;
+  }
+
+  .cards{
+
+    position:relative;
+
+    width:100%;
+
+    height:100%;
+  }
+
+  .card{
+
+    width:88%;
+
+    max-width:320px;
+
+    height:230px;
+
+    border-radius:24px;
+  }
+
+  .card-media{
+
+    height:60%;
+  }
+
+  .card-media img{
+
+    width:65px;
+  }
+
+  .card-info h3{
+
+    font-size:0.95rem;
+  }
+
+  .card-info button{
+
+    padding:0.7rem;
+
+    font-size:0.82rem;
+  }
+}

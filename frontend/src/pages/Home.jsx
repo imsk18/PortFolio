@@ -1,0 +1,126 @@
+import React, { useEffect, useRef } from 'react'
+import {useGSAP} from '@gsap/react'
+import { ScrollTrigger } from 'gsap/all';
+
+import Typed from 'typed.js'
+import '../styles/home.css';
+import gsap from 'gsap';
+import CursorImgEffect from '../components/CursorImgeffect';
+
+const Home = () => {
+  const typingRef = useRef(null)
+  useEffect(()=>{
+    const typed = new Typed(typingRef.current,{strings: ["Full stack developer","MERN stack developer","Backend developer","Frontend developer"],
+      typeSpeed:150,
+      backSpeed:50,
+      loop:true
+
+    })
+
+    return ()=>{
+      typed.destroy()
+    }
+
+  },[])
+
+
+   const imgArr = [
+        '/s.jpg',
+        '/b.jpg',
+        '/u.jpg'
+     ]
+
+
+   const imgRef = useRef()
+   gsap.registerPlugin(ScrollTrigger)
+
+ 
+useGSAP(() => {
+  const mm = gsap.matchMedia();
+
+  mm.add("(min-width: 601px)", () => {
+    // Desktop
+    gsap.to(imgRef.current, {
+      y: 640,
+      x: -590,
+      duration: 10,
+      scale: 0.5,
+      borderRadius: "10px   30px",
+      width: "250px",
+      // height:"200px",
+
+      scrollTrigger: {
+        trigger: imgRef.current,
+        markers: true,
+        start: "top 10%",
+        end: "top -55%",
+        scrub: true,
+        invalidateOnRefresh: true,
+
+        onUpdate: (elem) => {
+          const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+          imgRef.current.src = imgArr[imgIndex];
+        },
+      },
+    });
+  });
+
+  mm.add("(max-width: 600px)", () => {
+    // Mobile
+    gsap.to(imgRef.current, {
+      y: 300, // 👈 y change yaha
+      x: 0,   // mobile me simple rakho
+      duration: 10,
+      scale: 0.7,
+      borderRadius: "10px   30px",
+
+      scrollTrigger: {
+        trigger: imgRef.current,
+        start: "top 20%",
+        end: "top -40%",
+        scrub: true,
+
+        onUpdate: (elem) => {
+          const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+          imgRef.current.src = imgArr[imgIndex];
+        },
+      },
+    });
+  });
+
+  return () => mm.revert(); // cleanup
+});
+
+  return (
+    <div id='home'>
+      <CursorImgEffect/>
+      <div className="left">
+       <h1>Hii </h1>
+       <h1>i'm Shatrudhan</h1>
+       <h2>i'm a <span ref={typingRef}     className='auto-type'></span></h2>
+       {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
+       <div className="social-icon">
+        <i class="ri-github-fill"></i>
+        <i class="ri-linkedin-fill"></i>
+        <a href="https://www.instagram.com/snx_8een?igsh=MW81eXhtY2x0ajN3Nw=="> <i class="ri-instagram-line"> </i></a>
+        
+        <i class="ri-telegram-fill"></i>
+ </div>
+ <div className="btn">
+  <button>get cv</button>
+  <button>get in touch</button>
+ </div>
+      
+      </div>
+
+
+      <div className="right">
+        <img ref={imgRef} src="/s.jpg" alt="" />
+      </div>
+
+
+    </div>
+  )
+}
+
+export default Home

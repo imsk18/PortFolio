@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios'
+import '../styles/contact.css';
 
 const ContactForm = () => {
     const [FormData, setFormData] = useState({
@@ -41,7 +42,7 @@ await axios.post("http://10.103.100.209:3000/user", FormData)
   return (
     <div id='contact'>
       {msg && <p>{msg}</p>}
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='form'>
             <input type="text"
             placeholder='enter your name'
             name='Name'
@@ -76,7 +77,7 @@ await axios.post("http://10.103.100.209:3000/user", FormData)
              />
               <br />
              <br />
-             <input type="submit" />
+             <input className='btn' type="submit" />
 
         </form>
     </div>
