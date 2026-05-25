@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import gsap from 'gsap';
-import '../styles/Scrollingline.css';
+import '../styles/ScrollingLine.css';
 
 const items = Array.from({ length: 6 }, (_, index) => index + 1);
 const imageUrl = 'https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg';
