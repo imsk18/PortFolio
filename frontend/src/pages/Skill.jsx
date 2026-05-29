@@ -445,8 +445,8 @@ export default function Skill() {
   }, [gather]);
 
   return (
-    <section className="skill-section">
-      <h1>skill</h1>
+    <section id="skill">
+      <h1 className="heading">skill</h1>
 
       <div className="grid-bg"></div>
 
@@ -463,7 +463,7 @@ export default function Skill() {
             setGather(!gather)
           }
         >
-          SYNAPSER
+          FULLSTACK
         </h1>
 
       </div>

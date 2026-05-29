@@ -35,19 +35,76 @@ const Home = () => {
    gsap.registerPlugin(ScrollTrigger)
 
  
+// useGSAP(() => {
+//   const mm = gsap.matchMedia();
+
+//   mm.add("(min-width: 601px)", () => {
+//     // Desktop
+//     gsap.to(imgRef.current, {
+//       y: 640,
+//       x: -590,
+//       duration: 10,
+//       scale: 0.5,
+//       borderRadius: "10px   30px",
+//       width: "250px",
+//       // height:"200px",
+
+//       scrollTrigger: {
+//         trigger: imgRef.current,
+//         markers: true,
+//         start: "top 10%",
+//         end: "top -55%",
+//         scrub: true,
+//         invalidateOnRefresh: true,
+
+//         onUpdate: (elem) => {
+//           const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+//           imgRef.current.src = imgArr[imgIndex];
+//         },
+//       },
+//     });
+//   });
+
+
+//   mm.add("(max-width: 600px)", () => {
+//     // Mobile
+//     gsap.to(imgRef.current, {
+//       y: 300, // 👈 y change yaha
+//       x: 0,   // mobile me simple rakho
+//       duration: 10,
+//       scale: 0.7,
+//       borderRadius: "10px   30px",
+
+//       scrollTrigger: {
+//         trigger: imgRef.current,
+//         start: "top 20%",
+//         end: "top -40%",
+//         scrub: true,
+
+//         onUpdate: (elem) => {
+//           const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+//           imgRef.current.src = imgArr[imgIndex];
+//         },
+//       },
+//     });
+//   });
+
+//   return () => mm.revert(); // cleanup
+// });
+
+
 useGSAP(() => {
   const mm = gsap.matchMedia();
 
-  mm.add("(min-width: 601px)", () => {
-    // Desktop
+  // ================= DESKTOP =================
+  mm.add("(min-width: 1024px)", () => {
     gsap.to(imgRef.current, {
-      y: 640,
+      y: 680,
       x: -590,
       duration: 10,
-      scale: 0.5,
-      borderRadius: "10px   30px",
+      // scale: 0.5,
       width: "250px",
-      // height:"200px",
+      borderRadius: "10px ",
 
       scrollTrigger: {
         trigger: imgRef.current,
@@ -58,37 +115,78 @@ useGSAP(() => {
         invalidateOnRefresh: true,
 
         onUpdate: (elem) => {
-          const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+          const imgIndex = Math.min(
+            imgArr.length - 1,
+            Math.floor(elem.progress * imgArr.length)
+          );
+
           imgRef.current.src = imgArr[imgIndex];
         },
       },
     });
   });
 
-  mm.add("(max-width: 600px)", () => {
-    // Mobile
+  // ================= TABLET =================
+  mm.add("(min-width: 601px) and (max-width: 1023px)", () => {
     gsap.to(imgRef.current, {
-      y: 300, // 👈 y change yaha
-      x: 0,   // mobile me simple rakho
+      y: 450,
+      x: -250,
       duration: 10,
-      scale: 0.7,
-      borderRadius: "10px   30px",
+      // scale: 0.6,
+      width: "220px",
+      borderRadius: "10px 25px",
 
       scrollTrigger: {
         trigger: imgRef.current,
-        start: "top 20%",
-        end: "top -40%",
+        markers: false,
+        start: "top 15%",
+        end: "top -45%",
         scrub: true,
+        invalidateOnRefresh: true,
 
         onUpdate: (elem) => {
-          const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
+          const imgIndex = Math.min(
+            imgArr.length - 1,
+            Math.floor(elem.progress * imgArr.length)
+          );
+
           imgRef.current.src = imgArr[imgIndex];
         },
       },
     });
   });
 
-  return () => mm.revert(); // cleanup
+  // ================= MOBILE =================
+  mm.add("(max-width: 600px)", () => {
+    gsap.to(imgRef.current, {
+      y: 400,
+      x: 0,
+      duration: 10,
+      // scale: 0.7,
+      width: "180px",
+      borderRadius: "10px ",
+
+      scrollTrigger: {
+        trigger: imgRef.current,
+        markers: false,
+        start: "top 20%",
+        end: "top -40%",
+        scrub: true,
+        invalidateOnRefresh: true,
+
+        onUpdate: (elem) => {
+          const imgIndex = Math.min(
+            imgArr.length - 1,
+            Math.floor(elem.progress * imgArr.length)
+          );
+
+          imgRef.current.src = imgArr[imgIndex];
+        },
+      },
+    });
+  });
+
+  return () => mm.revert();
 });
 
   return (

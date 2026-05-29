@@ -928,11 +928,11 @@ const Project = () => {
     <>
     
       <section
-        className="main"
+        id="project"
         ref={mainRef}
       >
 
-        <h1>
+        <h1 className="heading">
           PROJECTS
         </h1>
 
@@ -1013,7 +1013,7 @@ const Project = () => {
           font-family:Inter,sans-serif;
         }
 
-        .main{
+        #project{
 
           min-height:100vh;
 
@@ -1173,7 +1173,7 @@ const Project = () => {
 
         @media (max-width:768px){
 
-          .main{
+          #project{
 
             height:100vh;
           }

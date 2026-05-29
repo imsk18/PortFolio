@@ -41,11 +41,14 @@ const Footer = () => {
             </li>
 
             <li>
-              <a href="#skills">Skills</a>
+              <a href="#skill">Skill</a>
+            </li>
+            <li>
+              <a href="#Education">Education</a>
             </li>
 
             <li>
-              <a href="#projects">Projects</a>
+              <a href="#project">Project</a>
             </li>
 
             <li>
@@ -64,7 +67,7 @@ const Footer = () => {
 
           <p>
             <i className="ri-phone-fill"></i>
-            +91 882566555
+            +91 969XXXX864
           </p>
 
           <p>

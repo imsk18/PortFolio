@@ -21,13 +21,14 @@
     /* align-items: center; */
     justify-content: center;
     text-align: justify;
-    padding-right: 12vw;
+    /* padding-right: 12vw; */
+    padding-right: 2vw;
     flex-direction: column;
     /* background-color: #1c7872ae; */
     background-color:  rgba(5, 114, 130, 0.921);
     
     gap: 0.5rem;
-    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
     color: #6B7280;
     
 }

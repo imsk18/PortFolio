@@ -52,12 +52,13 @@ const Education = () => {
   return (
     
     <div id='Education' ref={sectionRef}>
-      <h1 className='heading' style={{ textAlign: 'center' }}>MY EDUCATION</h1>
+      <h1 className='heading'>MY EDUCATION</h1>
         <div className="university" ref={universityRef}>
             <div className="u-img"><img src="u.jpg" alt="" /></div>
             <div className="u-info">
-              <h3>maharishi markandeshwar (Deeemed to Universiy)</h3>
-              <h4>becholer of computer application-BCA</h4>
+              
+              <h2>Becholer of Computer Application-BCA</h2>
+             <h5>Maharishi Markandeshwar (Deeemed to Universiy)</h5>
               <h5>2024-2027|pursuing</h5>
             </div>
 
@@ -67,8 +68,8 @@ const Education = () => {
         <div className="school" ref={schoolRef}>
             <div className="s-img"><img src="b.jpg" alt="" /></div>
             <div className="s-info">
-              <h3>B L L S P HIGH SCHOOL NARKATIA</h3>
-              <h4>Arts</h4>
+              <h2>Arts</h2>
+              <h5>B L L S P HIGH SCHOOL NARKATIA</h5>
               <h5>2022-2024|completed</h5>
             </div>
 

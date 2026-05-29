@@ -28,11 +28,19 @@ const About = () => {
 
       <div className="about-info">
         <div className="upper">
-           <h3>I'm Shatrudhan</h3>
+           <h2>I'm Shatrudhan</h2>
         <h4>fullstack developer</h4>
         </div>
         <div className="middle">
-           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid quae quasi iure. Temporibus natus delectus dignissimos dolorum labore distinctio, incidunt dolore commodi vel. Harum exercitationem dolor, quis tempora quos eius molestiae laudantium ullam quae consequatur sapiente cupiditate facilis facere.</p>
+           <p>Hello! I’m Shatrudhan Kumar, a Fullstack Developer with a passion for creating modern and interactive web experiences. I enjoy transforming ideas into responsive and functional websites using clean and efficient code.
+
+Currently, I’m pursuing my BCA while continuously improving my skills in frontend and backend development. I love learning new technologies, building creative projects, and solving real-world problems through coding.
+
+My tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I believe consistency, creativity, and continuous learning are the keys to becoming a great developer.
+
+Apart from coding, I enjoy playing cricket and exploring innovative ideas in technology.
+
+Thank you for visiting my portfolio 🚀</p>
         </div>
        <div className="info">
          <span>place: <a href="">bihar</a></span>
