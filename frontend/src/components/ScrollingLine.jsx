@@ -148,16 +148,20 @@ function ScrollingLine() {
       <div className="move">
         {items.map((item) => (
           <div className="marquee" key={`marquee-${item}`}>
-            <h1>welcome my website</h1>
+            {/* <h1>welcome my website</h1> */}
 
             <img className="Arrow" src={imageUrl} alt="arrow" />
 
-            <small>mernstack</small>
+            <small></small>
 
-            <img src="/skill-icons/React.svg" alt="" />
-            <img src="/skill-icons/javaScript.svg" alt="" />
-            <img src="/skill-icons/express.svg" alt="" />
-            <img src="/skill-icons/MongoDb.svg" alt="" />
+         
+           
+           
+
+            <img src="public/skill-icons/MongoDb.svg" alt="" />
+             <img src="public/skill-icons/express.svg" alt="" />
+               <img src="/skill-icons/React.svg" alt="" />
+            <img src="public/skill-icons/Node.js.svg" alt="" />
           </div>
         ))}
       </div>

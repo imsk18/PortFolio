@@ -9,7 +9,7 @@
     position: absolute;
     text-align: center;
     width: 100%;
-    padding-top: 10vh;
+    padding-top: 5vh;
 
 }
 
@@ -29,12 +29,13 @@
     
     gap: 0.5rem;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
-    color: #6B7280;
+    color: #FFFFFF;
     
 }
 .info{
     display: flex;
     flex-direction: column;
+    color: #FFFFFF;
 }
 .img-container{
     width: 50%;
@@ -81,7 +82,7 @@ a{
         flex-direction: column;
     }
     .header{
-        padding-top:7vh;
+        padding-top:5vh;
     }
     .img-container{
         width: 100vw;

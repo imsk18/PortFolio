@@ -32,11 +32,11 @@ const About = () => {
         <h4>fullstack developer</h4>
         </div>
         <div className="middle">
-           <p>Hello! I'm Shatrudhan Kumar, a Full-Stack Developer and BCA student passionate about building modern, responsive, and user-friendly web applications. I work with HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I enjoy learning new technologies, creating innovative projects, and solving real-world problems through code. 🚀**
+           <p>Hello! I'm Shatrudhan Kumar, a Full-Stack Developer and BCA student passionate about building modern, responsive, and user-friendly web applications. I work with HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I enjoy learning new technologies, creating innovative projects, and solving real-world problems through code.
 </p>
         </div>
        <div className="info">
-         <span>place: <a href="">bihar</a></span>
+         <span>place: <a href="">Bihar</a></span>
         <span>email: <a href="">kumarshatrudhan94263@gmail.com</a></span>
        </div>
        

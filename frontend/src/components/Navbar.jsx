@@ -8,7 +8,7 @@ const Navbar = () => {
   }
   return (
     <div id='navbar'>
-        <div className="logo"><h2>portfolio</h2></div>
+        <div className="logo"><h2 style={{color:'white'}}>portfolio</h2></div>
         
         <div className= {`all-links ${menuOpen ? "active" : ""}`}>
             <a href="#home"  onClick={()=>setMenuOpen(false)}>HOME</a>

@@ -25,72 +25,19 @@ const Home = () => {
 
 
    const imgArr = [
-        '/s.jpg',
-        '/b.jpg',
-        '/u.jpg'
+        
+    "/img8.jpeg",
+    "/img9.jpeg",
+    
+    "/img11.jpeg",
+    "/img12.jpg",
+    "/img10.jpeg",
      ]
 
 
    const imgRef = useRef()
    gsap.registerPlugin(ScrollTrigger)
 
- 
-// useGSAP(() => {
-//   const mm = gsap.matchMedia();
-
-//   mm.add("(min-width: 601px)", () => {
-//     // Desktop
-//     gsap.to(imgRef.current, {
-//       y: 640,
-//       x: -590,
-//       duration: 10,
-//       scale: 0.5,
-//       borderRadius: "10px   30px",
-//       width: "250px",
-//       // height:"200px",
-
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         markers: true,
-//         start: "top 10%",
-//         end: "top -55%",
-//         scrub: true,
-//         invalidateOnRefresh: true,
-
-//         onUpdate: (elem) => {
-//           const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
-//           imgRef.current.src = imgArr[imgIndex];
-//         },
-//       },
-//     });
-//   });
-
-
-//   mm.add("(max-width: 600px)", () => {
-//     // Mobile
-//     gsap.to(imgRef.current, {
-//       y: 300, // 👈 y change yaha
-//       x: 0,   // mobile me simple rakho
-//       duration: 10,
-//       scale: 0.7,
-//       borderRadius: "10px   30px",
-
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         start: "top 20%",
-//         end: "top -40%",
-//         scrub: true,
-
-//         onUpdate: (elem) => {
-//           const imgIndex = Math.min(imgArr.length - 1, Math.floor(elem.progress * imgArr.length));
-//           imgRef.current.src = imgArr[imgIndex];
-//         },
-//       },
-//     });
-//   });
-
-//   return () => mm.revert(); // cleanup
-// });
 
 
 useGSAP(() => {
@@ -103,6 +50,7 @@ useGSAP(() => {
       x: -590,
       duration: 10,
       // scale: 0.5,
+      
       width: "250px",
       borderRadius: "10px ",
 
@@ -163,7 +111,8 @@ useGSAP(() => {
       x: 0,
       duration: 10,
       // scale: 0.7,
-      width: "250",
+      width: "200",
+      height:"300",
       borderRadius: "10px ",
 
       scrollTrigger: {
@@ -197,6 +146,12 @@ useGSAP(() => {
        <h1>i'm Shatrudhan</h1>
        <h2>i'm a <span ref={typingRef}     className='auto-type'></span></h2>
        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
+       <div className="btn">
+  
+  <button>get in touch</button>
+ </div>
+
+
        <div className="social-icon">
         <i class="ri-github-fill"></i>
         <i class="ri-linkedin-fill"></i>
@@ -204,10 +159,7 @@ useGSAP(() => {
         
         <i class="ri-telegram-fill"></i>
  </div>
- <div className="btn">
-  <button>get cv</button>
-  <button>get in touch</button>
- </div>
+ 
       
       </div>
 

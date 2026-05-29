@@ -2,6 +2,7 @@
 margin:0;
 padding:0;
 box-sizing: border-box;
+/* color: #004d40; */
 
 }
 html,body{
@@ -9,12 +10,13 @@ width: 100%;
 height: 100%;
 }
 body{
-  background-color: #151111;
+  /* background-color: #151111; */
 }
 #navbar{
   height: 3rem;
   width: 100%;
-  background-color: #5f1752;
+  /* background-color: #5f1752; */
+  background-color:  rgb(3, 72, 83);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -47,9 +49,13 @@ padding-left: 2;
 #home{
   height: 100vh;
   max-width: 100%;
-  background-color:#5d1f52;
-  /* background-color: #669295; */
-  /* background-color:#4c9daf; */
+  /* background-color:#5d1f52; */
+  /* background-color:#107081; */
+   background-color:  rgb(3, 72, 83);
+  
+  /* background-color:whitesmoke; */
+   /* background-color:  rgba(5, 114, 130, 0.921); */
+  
   display: flex;
 }
 .left{
@@ -67,13 +73,14 @@ padding-left: 2;
 }
 .auto-type{
   /* color: #1dfa2c; */
-  color:  rgb(23, 171, 194);;
+  color:   rgba(6, 160, 14, 0.921);;
+  /* color:  rgb(23, 171, 194);; */
 }
 .left .social-icon{
   font-size:  clamp(2.5rem, 3vw, 2.2rem);
   display: flex;
   gap: 1rem;
-  color: rgb(243, 12, 231);
+  /* color: rgb(243, 12, 231); */
 
 
   
@@ -86,16 +93,15 @@ border-radius: solid 15px crimson;
 }
 .social-icon a{
   text-decoration: none;
-  color: crimson;
+  color: rgb(255, 255, 255);
 }
 .btn{
-  display: flex;
-  gap: 2rem;
+
 }
 .left .btn button{
  
   padding: 0.5rem;
-  background-color: #1f8884;
+  background-color: #f5f7f6;
   border-radius: 0.3rem;
   border-color: transparent;
 }
@@ -115,6 +121,7 @@ border-radius: solid 15px crimson;
   object-fit: cover;
   border-radius: 50%;
   z-index: 11;
+  
 }
 
 
@@ -126,7 +133,7 @@ border-radius: solid 15px crimson;
   flex-direction: column;
     position: absolute;
    top: 100%;
-   background-color:rgb(80, 6, 20);
+  background-color:  rgb(3, 72, 83);
    height: 100vh;
    width: 50vw;
    right: 0;
