@@ -159,11 +159,11 @@ useGSAP(() => {
   // ================= MOBILE =================
   mm.add("(max-width: 600px)", () => {
     gsap.to(imgRef.current, {
-      y: 400,
+      y: 480,
       x: 0,
       duration: 10,
       // scale: 0.7,
-      width: "180px",
+      width: "250",
       borderRadius: "10px ",
 
       scrollTrigger: {

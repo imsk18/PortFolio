@@ -26,6 +26,7 @@
     flex-direction: column;
     /* background-color: #1c7872ae; */
     background-color:  rgba(5, 114, 130, 0.921);
+
     
     gap: 0.5rem;
     font-size: clamp(0.9rem, 2vw, 1.1rem);
@@ -97,6 +98,7 @@ a{
         height: 100vh;
         padding: 0;
         padding-inline: 1rem;
+        padding-bottom: 8vh;
 
         
         /* justify-content: ; */
