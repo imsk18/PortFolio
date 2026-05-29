@@ -9,22 +9,22 @@ const About = () => {
       <div className="header">
            <h1 className='a-h1' >About</h1>
       </div>
-   
-      <div className="img-container">
+ 
+      {<div className="img-container">
 
         <div className="right-img">
           <img src="./public/s.jpg" alt="" />
          <img src="./public/s.jpg" alt="" />
-        </div>
+        </div> 
 
-        <div className="left-img">
-           {/* <img src="./public/s.jpg" alt="" /> */}
+         <div className="left-img">
+       
          <img src="./public/s.jpg" alt="" />
         </div>
        
         
        
-      </div>
+      </div> } 
 
       <div className="about-info">
         <div className="upper">
@@ -32,15 +32,8 @@ const About = () => {
         <h4>fullstack developer</h4>
         </div>
         <div className="middle">
-           <p>Hello! I’m Shatrudhan Kumar, a Fullstack Developer with a passion for creating modern and interactive web experiences. I enjoy transforming ideas into responsive and functional websites using clean and efficient code.
-
-Currently, I’m pursuing my BCA while continuously improving my skills in frontend and backend development. I love learning new technologies, building creative projects, and solving real-world problems through coding.
-
-My tech stack includes HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I believe consistency, creativity, and continuous learning are the keys to becoming a great developer.
-
-Apart from coding, I enjoy playing cricket and exploring innovative ideas in technology.
-
-Thank you for visiting my portfolio 🚀</p>
+           <p>Hello! I'm Shatrudhan Kumar, a Full-Stack Developer and BCA student passionate about building modern, responsive, and user-friendly web applications. I work with HTML, CSS, JavaScript, React, Node.js, Express, MongoDB, and MySQL. I enjoy learning new technologies, creating innovative projects, and solving real-world problems through code. 🚀**
+</p>
         </div>
        <div className="info">
          <span>place: <a href="">bihar</a></span>
