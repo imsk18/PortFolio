@@ -158,10 +158,10 @@ function ScrollingLine() {
            
            
 
-            <img src="public/skill-icons/MongoDb.svg" alt="" />
-             <img src="public/skill-icons/express.svg" alt="" />
+            <img src="/skill-icons/MongoDb.svg" alt="" />
+             <img src="/skill-icons/express.svg" alt="" />
                <img src="/skill-icons/React.svg" alt="" />
-            <img src="public/skill-icons/Node.js.svg" alt="" />
+            <img src="/skill-icons/Node.js.svg" alt="" />
           </div>
         ))}
       </div>
