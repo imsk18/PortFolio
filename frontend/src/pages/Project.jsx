@@ -934,7 +934,7 @@ const Project = () => {
 
 
         <div className="p-heading">
-          <img className="heading-img" src="public/pro.png" alt="" />
+          <img className="heading-img" src="/pro.png" alt="" />
           <h1>  PROJECTS</h1>
          
         </div>

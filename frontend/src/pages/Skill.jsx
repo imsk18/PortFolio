@@ -450,7 +450,7 @@ export default function Skill() {
 
   return (
     <section id="skill">
-      <div className="heading"><img className="heading-img" src="public/layer.png" alt="" />
+      <div className="heading"><img className="heading-img" src="layer.png" alt="" />
        <h1 >SKILLS</h1>
       </div>
      
