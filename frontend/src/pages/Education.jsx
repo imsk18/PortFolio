@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import '../styles/education.css';
+// import CursorImgEffect from '../components/CursorImgeffect';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -9,6 +10,7 @@ const Education = () => {
   const sectionRef = useRef(null)
   const universityRef = useRef(null)
   const schoolRef = useRef(null)
+  //  const EduRef = useRef(null)
 
   useEffect(() => {
     const section = sectionRef.current
@@ -51,8 +53,9 @@ const Education = () => {
 
   return (
     
-    <div id='Education' ref={sectionRef}>
-      <h1 className='heading'>MY EDUCATION</h1>
+    <div id='Education' ref={sectionRef} >
+        {/* <CursorImgEffect targetRef={EduRef}/> */}
+      <h1 className='heading'><i class="ri-graduation-cap-fill"></i> MY EDUCATION</h1>
         <div className="university" ref={universityRef}>
             <div className="u-img"><img src="u.jpg" alt="" /></div>
             <div className="u-info">

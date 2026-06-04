@@ -9,6 +9,7 @@ import CursorImgEffect from '../components/CursorImgeffect';
 
 const Home = () => {
   const typingRef = useRef(null)
+  //  const homeRef = useRef(null);
   useEffect(()=>{
     const typed = new Typed(typingRef.current,{strings: ["Full stack developer","MERN stack developer","Backend developer","Frontend developer"],
       typeSpeed:150,
@@ -56,7 +57,7 @@ useGSAP(() => {
 
       scrollTrigger: {
         trigger: imgRef.current,
-        markers: true,
+        // markers: true,
         start: "top 10%",
         end: "top -55%",
         scrub: true,
@@ -139,7 +140,8 @@ useGSAP(() => {
 });
 
   return (
-    <div id='home'>
+    <div id='home' >
+      {/* <CursorImgEffect targetRef={homeRef}/> */}
       <CursorImgEffect/>
       <div className="left">
        <h1>Hii </h1>

@@ -16,6 +16,10 @@ const skills = [
     name: "MongoDB",
     img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg",
   },
+  {
+    name: "Gsap",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLtP4ap9JhmDHpQufAN0Y27MG5fzjprQkTmQ&s",
+  },
 
   {
     name: "Express",
@@ -446,7 +450,10 @@ export default function Skill() {
 
   return (
     <section id="skill">
-      <h1 className="heading">skill</h1>
+      <div className="heading"><img className="heading-img" src="public/layer.png" alt="" />
+       <h1 >SKILLS</h1>
+      </div>
+     
 
       <div className="grid-bg"></div>
 

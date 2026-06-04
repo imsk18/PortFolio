@@ -7,7 +7,7 @@ const About = () => {
     
     <div id='about'>
       <div className="header">
-           <h1 className='a-h1' >About</h1>
+           <h1 className='a-h1' ><i class="ri-user-fill"></i> About me</h1>
       </div>
  
       {<div className="img-container">

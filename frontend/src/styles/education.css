@@ -21,7 +21,7 @@
 .university {
   height: 40vh;
   width: 70%;
-  background-color: #cfc2ca;
+  background-color: #f7f7f7b9;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -50,7 +50,7 @@
 .school {
   height: 40vh;
   width: 70%;
-  background-color: #493636;
+  background-color: #f7f7f7b9;
   display: flex;
   align-items: center;
   /* justify-content: center; */
@@ -111,7 +111,7 @@
     padding-left: 10vw;
     /* text-align: center; */
     flex-direction: column;
-    font-size: clamp(0.8rem, 2vw, 1.2rem);
+    font-size: clamp(0.8rem, 2vw, 1rem);
     /* justify-content: flex-end; */
     /* background-color: #c40606; */
   }

@@ -24,8 +24,24 @@ body{
   background-color:  rgb(3, 101, 129);;
 }
 .heading{
-  text-align: center;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 3vh;
+  gap: 1vw;
+  
+  /* text-align: center;
   text-transform: capitalize;
+  padding-top: 3vh; */
+}
+.heading h1{
+   font-size: clamp(1.8rem, 4vw, 2rem);
+}
+.heading-img{
+  height: 6vh;
+  align-items: center;
+  padding-top: 1vh;
 }
 
 /* GRID */

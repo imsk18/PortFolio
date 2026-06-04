@@ -932,9 +932,15 @@ const Project = () => {
         ref={mainRef}
       >
 
-        <h1 className="heading">
-          PROJECTS
-        </h1>
+
+        <div className="p-heading">
+          <img className="heading-img" src="public/pro.png" alt="" />
+          <h1>  PROJECTS</h1>
+         
+        </div>
+
+        
+         
 
         {/* DESKTOP CURVE */}
 
@@ -1029,6 +1035,14 @@ const Project = () => {
           // );
           background:#ffff
         }
+          .p-heading{
+          // color:green;
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          gap:0.3rem;
+          padding-top:5vh;
+          }
 
         // h1{
 
