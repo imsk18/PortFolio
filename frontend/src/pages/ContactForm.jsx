@@ -1,8 +1,12 @@
 import { useState } from "react";
+import emailjs from "@emailjs/browser";
 import '../styles/contact.css';
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -20,40 +24,32 @@ function Contact() {
   };
 
   const handleSubmit = async (e) => {
+    console.log({
+  service: EMAILJS_SERVICE_ID,
+  template: EMAILJS_TEMPLATE_ID,
+  publicKey: EMAILJS_PUBLIC_KEY,
+});
     e.preventDefault();
-    
 
-
-
-
-
-console.log("submitted")
-
-
-
-
-
-
-
-
-
-
-
-
-    
+    if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+      toast.error("EmailJS is not configured. Add env vars and restart the dev server.");
+      return;
+    }
 
     try {
-      const response = await fetch("https://portfolio-backend-7qd9.onrender.com/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
+      const result = await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
         },
-        body: JSON.stringify(formData),
-      });
+        EMAILJS_PUBLIC_KEY
+      );
 
-      const data = await response.json();
-
-      if (data.success) {
+      if (result.status === 200) {
         toast.success("Message sent successfully! 🚀", {
           position: "top-right",
           autoClose: 3000,
@@ -69,10 +65,9 @@ console.log("submitted")
         toast.error("Failed to send message ❌");
       }
     } catch (error) {
-      toast.error("Server error. Please try again later ❌");
+      toast.error(`EmailJS error: ${error.text || error.message || error}`);
     }
   };
-
   return (
     
     <section id="contact">
@@ -109,7 +104,7 @@ Feel free to reach out. I'd love to hear from you.
 
           <div className="info-item">
             <i className="ri-mail-fill"></i>
-            <span>shatrudhan@email.com</span>
+            <span>shatrudhankumar75864@email.com</span>
           </div>
 
           <div className="info-item">

@@ -37,6 +37,10 @@
     flex-direction: column;
     color: #FFFFFF;
 }
+.info span a{
+    color: #FFFFFF;
+}
+
 .img-container{
     width: 50%;
     height: 100vh;

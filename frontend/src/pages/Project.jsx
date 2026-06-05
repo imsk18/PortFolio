@@ -13,11 +13,11 @@ gsap.registerPlugin(
 const projectCards = [
   {
     title: "Portfolio Website",
-    img: "/s.jpg",
+    img: "/project-img/img2.png",
     desc: "Modern responsive portfolio website.",
     tech: ["React", "GSAP", "Node.js"],
-    live: "https://your-live-link.com",
-    github: "https://github.com/yourusername/portfolio",
+    live: "https://devsk.in",
+    github: "https://github.com/imsk18/portfolio",
   },
 
   {
@@ -28,14 +28,7 @@ const projectCards = [
     live: "https://your-live-link.com",
     github: "https://github.com/yourusername/ecommerce",
   },
-  {
-    title: "Portfolio Website",
-    img: "/s.jpg",
-    desc: "Modern responsive portfolio website.",
-    tech: ["React", "GSAP", "Node.js"],
-    live: "https://your-live-link.com",
-    github: "https://github.com/yourusername/portfolio",
-  },
+ 
 
   {
     title: "E-Commerce Website",

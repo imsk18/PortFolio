@@ -39,9 +39,10 @@ body{
    font-size: clamp(1.8rem, 4vw, 2rem);
 }
 .heading-img{
-  height: 6vh;
+  height: 4.5vh;
+
   align-items: center;
-  padding-top: 1vh;
+  padding-top: 0.9vh;
 }
 
 /* GRID */
