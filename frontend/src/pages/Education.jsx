@@ -61,8 +61,8 @@ const Education = () => {
             <div className="u-info">
               
               <h2>Becholer of Computer Application-BCA</h2>
-             <h5>Maharishi Markandeshwar (Deeemed to Universiy)</h5>
-              <h5>2024-2027|pursuing</h5>
+             <h3>Maharishi Markandeshwar (Deeemed to Universiy)</h3>
+              <h3>2024-2027|<span>pursuing</span></h3>
             </div>
 
         </div>
@@ -72,8 +72,8 @@ const Education = () => {
             <div className="s-img"><img src="b.jpg" alt="" /></div>
             <div className="s-info">
               <h2>Arts</h2>
-              <h5>B L L S P HIGH SCHOOL NARKATIA</h5>
-              <h5>2022-2024|completed</h5>
+              <h3>B L L S P HIGH SCHOOL NARKATIA</h3>
+              <h3>2022-2024|<span>completed</span></h3>
             </div>
 
         </div>

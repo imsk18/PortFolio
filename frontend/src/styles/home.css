@@ -96,7 +96,12 @@ border-radius: solid 15px crimson;
   color: rgb(255, 255, 255);
 }
 .btn{
+  display: flex;
+  gap: 1rem;
 
+}
+.btn a{
+  color: white;
 }
 .left .btn button{
  
@@ -104,6 +109,7 @@ border-radius: solid 15px crimson;
   background-color: #369e6a;
   border-radius: 0.3rem;
   border-color: transparent;
+  /* margin: 1vw; */
 }
 .btn button:active{
   scale: 0.9;
@@ -169,6 +175,9 @@ border-radius: solid 15px crimson;
    transition: .3s;
    font-size: 40px;
 
+}
+.auto-type{
+  font-size: clamp(1.4rem, 1vw, 1rem);
 }
 
 

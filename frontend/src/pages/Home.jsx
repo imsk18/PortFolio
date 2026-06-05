@@ -145,12 +145,13 @@ useGSAP(() => {
       <CursorImgEffect/>
       <div className="left">
        <h1>Hii </h1>
-       <h1>i'm Shatrudhan</h1>
-       <h2>i'm a <span ref={typingRef}     className='auto-type'></span></h2>
+       <h1>I'm Shatrudhan</h1>
+       <h2>I'm a <span ref={typingRef}     className='auto-type'></span></h2>
        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
        <div className="btn">
   
-  <button>get in touch</button>
+  <button><a href="#contact">Get in touch</a></button>
+  <button><a href="#about">About Me</a></button>
  </div>
 
 
