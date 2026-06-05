@@ -104,7 +104,7 @@ Feel free to reach out. I'd love to hear from you.
 
           <div className="info-item">
             <i className="ri-mail-fill"></i>
-            <span>shatrudhankumar75864@email.com</span>
+            <span>shatrudhankumar75864@gmail.com</span>
           </div>
 
           <div className="info-item">
