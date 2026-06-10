@@ -168,7 +168,7 @@ useGSAP(() => {
 
 
       <div className="right">
-        <img ref={imgRef} src="/s.jpg" alt="" />
+        <img ref={imgRef} src="/dp.jpeg" alt="" />
       </div>
 
 
