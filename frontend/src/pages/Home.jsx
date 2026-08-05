@@ -7,9 +7,9 @@ import '../styles/home.css';
 import gsap from 'gsap';
 import CursorImgEffect from '../components/CursorImgeffect';
 
-const Home = () => {
+const Home = ({theme}) => {
   const typingRef = useRef(null)
-  //  const homeRef = useRef(null);
+   const homeRef = useRef(null);
   useEffect(()=>{
     const typed = new Typed(typingRef.current,{strings: ["Full stack developer","MERN stack developer","Backend developer","Frontend developer"],
       typeSpeed:150,
@@ -140,12 +140,17 @@ useGSAP(() => {
 });
 
   return (
-    <div id='home' >
-      {/* <CursorImgEffect targetRef={homeRef}/> */}
-      <CursorImgEffect/>
+    <div id='home' ref={homeRef}  style={{
+        backgroundColor: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+        minHeight: "300px",
+        padding: "20px",
+      }} >
+      <CursorImgEffect targetRef={homeRef}/>
+      {/* <CursorImgEffect/> */}
       <div className="left">
        <h1>Hii </h1>
-       <h1>I'm Shatrudhan</h1>
+       <h1>I'm <span style={{color:"#E8C766"}}>Shatrudhan</span></h1>
        <h2>I'm a <span ref={typingRef}     className='auto-type'></span></h2>
        {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
        <div className="btn">

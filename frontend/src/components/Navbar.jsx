@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Navbar = () => {
+const Navbar = ({theme , changeTheme}) => {
    const [menuOpen, setMenuOpen] = useState(false)
 
   function handleLinks(){
@@ -19,6 +19,7 @@ const Navbar = () => {
             <a href="#contact"      onClick={()=>setMenuOpen(false)}>CONTACT</a>
             <a href="#"      onClick={()=>setMenuOpen(false)}></a>
         </div>
+        <button onClick={changeTheme}>  {theme === "light" ? "🌙 Dark" : "☀️ Light"}</button>
         <div className={`menu-icon ${menuOpen ? "active" : ""}`}  onClick={handleLinks}>
           <span></span>
           <span></span>

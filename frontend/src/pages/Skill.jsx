@@ -470,7 +470,7 @@ export default function Skill() {
             setGather(!gather)
           }
         >
-          FULLSTACK
+          MY TeCH STACK
         </h1>
 
       </div>

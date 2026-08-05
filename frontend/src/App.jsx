@@ -6,21 +6,29 @@ import ContactForm from "./pages/ContactForm"
 import Education from "./pages/Education"
 import Project from "./pages/Project"
 import Footer from "./pages/Footer"
+import { useState } from "react"
 
 
 
 function App() {
+  const [theme, setTheme] = useState("light")
+
+  const changeTheme = ()=>{
+    setTheme(theme === "light" ? "dark" : "light")
+  }
+  
   
 
   return (
-    <div>
+    <div >
       
-      <Navbar/>
-      <Home/>
-      <About/>
+      
+      <Navbar theme={theme} changeTheme={changeTheme}   />
+      <Home theme={theme}/>
+      <About theme={theme} />
     
       <Skill/>
-      <Education/>
+      <Education theme={theme}/>
       <Project/>
       <ContactForm/>
       <Footer/>

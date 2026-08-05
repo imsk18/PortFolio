@@ -10,6 +10,8 @@
   gap: 0.5rem;
   align-items: center;
   justify-content: center;
+  position: relative;
+  overflow: hidden;
 }
 .heading{
  font-size: clamp(1.8rem, 4vw, 2rem);

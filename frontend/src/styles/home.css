@@ -14,9 +14,10 @@ body{
 }
 #navbar{
   height: 3rem;
-  width: 100%;
+  width: 80%;
+  margin-left: 0%;
   /* background-color: #5f1752; */
-  background-color:  rgb(3, 72, 83);
+  background-color:  whitesmoke;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -27,6 +28,8 @@ body{
     position: fixed;
     font-size: clamp(0.8rem, 2vw, 1rem);
     border-bottom: 1px solid  #a2a7a8bf;
+    margin-top: 5vh;
+    border-radius: 15px;
   
 }
 .all-links {
@@ -51,7 +54,7 @@ padding-left: 2;
   max-width: 100%;
   /* background-color:#5d1f52; */
   /* background-color:#107081; */
-   background-color:  rgb(3, 72, 83);
+   background-color:  gainsboro;
   
   /* background-color:whitesmoke; */
    /* background-color:  rgba(5, 114, 130, 0.921); */
@@ -66,14 +69,14 @@ padding-left: 2;
   gap: 1rem;
   /* margin-inline: 25vw; */
   /* color: cornflowerblue; */
-  color:white;
+  /* color:white; */
   
   justify-content: center;
   flex-direction: column;
 }
 .auto-type{
   /* color: #1dfa2c; */
-  color:   rgba(6, 160, 14, 0.921);;
+  color:   #E8C766;
   /* color:  rgb(23, 171, 194);; */
 }
 .left .social-icon{
@@ -106,7 +109,7 @@ border-radius: solid 15px crimson;
 .left .btn button{
  
   padding: 0.5rem;
-  background-color: #369e6a;
+  background-color: #E8C766;
   border-radius: 0.3rem;
   border-color: transparent;
   /* margin: 1vw; */

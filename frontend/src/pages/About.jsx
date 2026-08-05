@@ -2,10 +2,15 @@ import React from 'react'
 import '../styles/about.css';
 import ScrollingLine from '../components/ScrollingLine';
 
-const About = () => {
+const About = ({theme}) => {
   return (
     
-    <div id='about'>
+    <div id='about' style={{
+        backgroundColor: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+        minHeight: "300px",
+        padding: "20px",
+      }} >
       <div className="header">
            <h1 className='a-h1' ><i class="ri-user-fill"></i> About me</h1>
       </div>
