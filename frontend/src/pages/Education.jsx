@@ -56,8 +56,7 @@ const Education = ({theme}) => {
     <div id='Education' ref={sectionRef} style={{
         backgroundColor: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
-        minHeight: "300px",
-        padding: "20px",
+       
       }}  >
         {/* <CursorImgEffect targetRef={EduRef}/> */}
       <h1 className='heading'><i class="ri-graduation-cap-fill"></i> MY EDUCATION</h1>
@@ -66,7 +65,7 @@ const Education = ({theme}) => {
             <div className="u-info">
               
               <h2>Becholer of Computer Application-BCA</h2>
-             <h3>Maharishi Markandeshwar (Deeemed to Universiy)</h3>
+             <h3>Maharishi Markandeshwar (Deeemed to be) university</h3>
               <h3>2024-2027|<span>pursuing</span></h3>
             </div>
 
@@ -77,7 +76,7 @@ const Education = ({theme}) => {
             <div className="s-img"><img src="b.jpg" alt="" /></div>
             <div className="s-info">
               <h2>Arts</h2>
-              <h3>B L s S P HIGH SCHOOL NARKATIA</h3>
+              <h3>B L S S P HIGH SCHOOL NARKATIA</h3>
               <h3>2022-2024|<span>completed</span></h3>
             </div>
 

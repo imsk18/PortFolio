@@ -14,23 +14,30 @@ body{
 }
 #navbar{
   height: 3rem;
-  width: 80%;
+  width: 70%;
   margin-left: 0%;
   /* background-color: #5f1752; */
-  background-color:  whitesmoke;
+  background-color:  rgb(176, 160, 160);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-inline: 2rem;
     position: absolute;
-    top: 0;
+    /* top: 0; */
+    left:50%;
+    transform: translateX(-50%);
     z-index: 1000;
     position: fixed;
     font-size: clamp(0.8rem, 2vw, 1rem);
     border-bottom: 1px solid  #a2a7a8bf;
-    margin-top: 5vh;
-    border-radius: 15px;
+    margin-top: 1vh;
+    border-radius: 50px;
   
+}
+#navbar button{
+  background-color: transparent;
+  border-bottom: none;
+  color: blue;
 }
 .all-links {
   display: flex;
@@ -98,13 +105,17 @@ border-radius: solid 15px crimson;
   text-decoration: none;
   color: rgb(255, 255, 255);
 }
-.btn{
+.btn {
   display: flex;
   gap: 1rem;
+  /* background: #000; */
+  color: #c63636;
 
 }
 .btn a{
   color: white;
+  font-style: normal;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .left .btn button{
  
@@ -137,21 +148,37 @@ border-radius: solid 15px crimson;
 
 
 @media (max-width:600px) {
+
+  #navbar{
+    width: 95%;
+    padding-inline: 1rem;
+  }
+  #navbar button{
+    border-radius: 50%;
+    /* background-color: aliceblue; */
+    border-bottom: #d3dedc 2px solid;
+  
+  margin-left:60% ;
+}
  .all-links{
     /* display: block;  */
   flex-direction: column;
     position: absolute;
    top: 100%;
-  background-color:  rgb(3, 72, 83);
-   height: 100vh;
-   width: 50vw;
-   right: 0;
+   margin-top: 0.1rem;
+   background-color:  rgb(176, 160, 160);
+   height: 30vh;
+   width: 95vw;
+   left:50%;
+    transform: translateX(-50%);
    padding-left: 2rem;
    padding-top: 1rem;
-   gap: 3rem;
+   border-radius: 0px 0px 20px 20px;
+   gap: 2rem;
    opacity:0;
    pointer-events: none;
    transition: 0.3s linear;
+  font-weight: 700;
    
   }
   .all-links.active{
@@ -190,7 +217,7 @@ border-radius: solid 15px crimson;
     /* padding: 40px 20px; */
  }
  .social-icon{
-  font-size: c;
+  /* font-size: ; */
  }
 
 
@@ -201,6 +228,7 @@ border-radius: solid 15px crimson;
   padding-inline: 2rem;
    padding-top: 45px;
     gap: 1rem;
+    align-items: center;
   }
   .right{
     

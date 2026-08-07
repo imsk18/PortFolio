@@ -27,7 +27,7 @@ const Home = ({theme}) => {
 
    const imgArr = [
         
-    "/img8.jpeg",
+    "/dp.jpeg",
     "/img9.jpeg",
     
     "/img11.jpeg",
@@ -143,8 +143,7 @@ useGSAP(() => {
     <div id='home' ref={homeRef}  style={{
         backgroundColor: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
-        minHeight: "300px",
-        padding: "20px",
+       
       }} >
       <CursorImgEffect targetRef={homeRef}/>
       {/* <CursorImgEffect/> */}

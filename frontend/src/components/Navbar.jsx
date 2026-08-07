@@ -8,7 +8,7 @@ const Navbar = ({theme , changeTheme}) => {
   }
   return (
     <div id='navbar'>
-        <div className="logo"><h2 style={{color:'white'}}>Portfolio</h2></div>
+        <div className="logo"><h2 style={{color:'white'}}>SK.</h2></div>
         
         <div className= {`all-links ${menuOpen ? "active" : ""}`}>
             <a href="#home"  onClick={()=>setMenuOpen(false)}>HOME</a>
@@ -19,7 +19,7 @@ const Navbar = ({theme , changeTheme}) => {
             <a href="#contact"      onClick={()=>setMenuOpen(false)}>CONTACT</a>
             <a href="#"      onClick={()=>setMenuOpen(false)}></a>
         </div>
-        <button onClick={changeTheme}>  {theme === "light" ? "🌙 Dark" : "☀️ Light"}</button>
+        <button onClick={changeTheme}>  {theme === "light" ? "🌙" : <i class="ri-sun-fill"></i>}</button>
         <div className={`menu-icon ${menuOpen ? "active" : ""}`}  onClick={handleLinks}>
           <span></span>
           <span></span>

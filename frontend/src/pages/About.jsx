@@ -8,8 +8,7 @@ const About = ({theme}) => {
     <div id='about' style={{
         backgroundColor: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
-        minHeight: "300px",
-        padding: "20px",
+      
       }} >
       <div className="header">
            <h1 className='a-h1' ><i class="ri-user-fill"></i> About me</h1>
@@ -41,7 +40,7 @@ const About = ({theme}) => {
 </p>
         </div>
        <div className="info">
-         <span>place: <a href="">Bihar,India</a></span>
+         <span>place: <a href="">Bihar-India-845301</a></span>
         <span>email: <a href="">kumarshatrudhan94263@gmail.com</a></span>
        </div>
        

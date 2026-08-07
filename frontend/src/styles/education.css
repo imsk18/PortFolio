@@ -112,7 +112,7 @@
     width: 100vw;
     height: 25vh;
     display: flex;
-    padding-left: 10vw;
+    padding-left: 6vw;
     /* text-align: center; */
     flex-direction: column;
     font-size: clamp(0.7rem, 1vw, 1rem);
@@ -157,7 +157,7 @@
     /* height: 25vh; */
     display: flex;
     /* text-align: ; */
-    padding-left: 10vw;
+    padding-left: 6vw;
     flex-direction: column;
     font-size: clamp(0.7rem, 1vw, 1rem);
     line-height: 1.3;
