@@ -1,21 +1,34 @@
 
+
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import '../styles/project.css';
+import "../styles/project.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 
-gsap.registerPlugin(
-  ScrollTrigger,
-  MotionPathPlugin
-);
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const projectCards = [
   {
     title: "Portfolio Website",
     img: "/project-img/img2.png",
     desc: "Modern responsive portfolio website.",
-    tech: ["React", "GSAP", "Node.js"],
+
+    tech: [
+      {
+        name: "React",
+       icon: "/skill-icons/React.svg",
+      },
+      {
+        name: "GSAP",
+        icon: "/gsap.svg",
+      },
+      {
+        name: "Node.js",
+        icon: "/node.svg",
+      },
+    ],
+
     live: "https://devsk.in",
     github: "https://github.com/imsk18/portfolio",
   },
@@ -24,47 +37,69 @@ const projectCards = [
     title: "E-Commerce Website",
     img: "/u.jpg",
     desc: "Full stack shopping website.",
-    tech: ["React", "Express", "MongoDB"],
+
+    tech: [
+      {
+        name: "React",
+        icon: "/skill-icons/React.svg",
+      },
+      {
+        name: "Express",
+        icon: "/icons/express.svg",
+      },
+      {
+        name: "MongoDB",
+        icon: "/icons/mongodb.svg",
+      },
+    ],
+
     live: "https://your-live-link.com",
     github: "https://github.com/yourusername/ecommerce",
   },
- 
 
   {
     title: "E-Commerce Website",
     img: "/project-img/img1.png",
     desc: "Full stack shopping website.",
-    tech: ["React", "Express", "MongoDB"],
+
+    tech: [
+      {
+        name: "React",
+        icon: "/icons/react.svg",
+      },
+      {
+        name: "Express",
+        icon: "/icons/express.svg",
+      },
+      {
+        name: "MongoDB",
+        icon: "/icons/mongodb.svg",
+      },
+    ],
+
     live: "https://luxestore-1-or2j.onrender.com/",
     github: "https://github.com/yourusername/ecommerce",
   },
 ];
 
-const Project = () => {
-
+const Project = ({ theme}) => {
   const mainRef = useRef(null);
-
   const cardsRef = useRef([]);
 
   const handleProjectClick = (title) => {
-
     console.log(`${title} clicked`);
   };
 
   useEffect(() => {
+    const cards = cardsRef.current.filter(Boolean);
 
-    const cards =
-      cardsRef.current.filter(Boolean);
-
-    if (!cards.length || !mainRef.current)
-      return;
+    if (!cards.length || !mainRef.current) return;
 
     /* =========================
        MOBILE STACK SCROLL
     ========================= */
 
     if (window.innerWidth <= 768) {
-
       gsap.set(cards, {
         position: "absolute",
         left: "50%",
@@ -76,7 +111,6 @@ const Project = () => {
       });
 
       const mobileTl = gsap.timeline({
-
         scrollTrigger: {
           trigger: mainRef.current,
           start: "top top",
@@ -87,7 +121,6 @@ const Project = () => {
       });
 
       cards.forEach((card, i) => {
-
         /* CURRENT CARD ENTER */
 
         mobileTl.to(
@@ -97,33 +130,27 @@ const Project = () => {
             duration: 1,
             ease: "power3.out",
           },
-
           i
         );
 
         /* OLD CARD MOVE LITTLE UP */
 
         if (i > 0) {
-
           mobileTl.to(
             cards[i - 1],
             {
-
               y: -60,
               scale: 0.92,
               opacity: 0.65,
               duration: 1,
             },
-
             i
           );
         }
       });
 
       return () => {
-
         if (mobileTl.scrollTrigger) {
-
           mobileTl.scrollTrigger.kill();
         }
 
@@ -141,7 +168,6 @@ const Project = () => {
     });
 
     const desktopTl = gsap.timeline({
-
       scrollTrigger: {
         trigger: mainRef.current,
         start: "top top",
@@ -152,11 +178,9 @@ const Project = () => {
     });
 
     cards.forEach((card, i) => {
-
       desktopTl.to(
         card,
         {
-
           motionPath: {
             path: "#curve",
             align: "#curve",
@@ -168,50 +192,41 @@ const Project = () => {
           ease: "none",
           duration: 1,
         },
-
         i * 0.3
       );
     });
 
     return () => {
-
       if (desktopTl.scrollTrigger) {
-
         desktopTl.scrollTrigger.kill();
       }
 
       desktopTl.kill();
     };
-
   }, []);
 
   const setCardRef = (el) => {
-
-    if (
-      el &&
-      !cardsRef.current.includes(el)
-    ) {
+    if (el && !cardsRef.current.includes(el)) {
       cardsRef.current.push(el);
     }
   };
 
   return (
     <>
-    
-      <section
-        id="project"
-        ref={mainRef}
-      >
-
-
+      <section id="project" ref={mainRef} style={{
+        backgroundColor: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+      
+      }} >
         <div className="p-heading">
-          <img className="heading-img" src="/pro.png" alt="" />
-          <h1>  PROJECTS</h1>
-         
-        </div>
+          <img
+            className="heading-img"
+            src="/pro.png"
+            alt=""
+          />
 
-        
-         
+          <h1>PROJECTS</h1>
+        </div>
 
         {/* DESKTOP CURVE */}
 
@@ -220,86 +235,82 @@ const Project = () => {
           height="100%"
           viewBox="0 0 1000 500"
         >
-
           <path
             id="curve"
-            // d="M100,400 Q500,100 900,400"
             d="M100,350 Q500,50 900,350"
             fill="none"
             stroke="transparent"
           />
-
         </svg>
 
-        
-{/* CARDS */}
+        {/* CARDS */}
 
-<div className="cards">
-
-  {projectCards.map((card) => (
-
-    <div
-      key={card.title}
-      className="card"
-      ref={setCardRef}
-    >
-
-      <div className="card-media">
-        <img
-          src={card.img}
-          alt={card.title}
-        />
-      </div>
-
-      <div className="card-info">
-
-        <h3>{card.title}</h3>
-
-        <p className="card-desc">
-          {card.desc}
-        </p>
-
-        <div className="tech-stack">
-          {card.tech.map((tech) => (
-            <span key={tech}>
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        <div className="card-buttons">
-
-          <button
-            className="live-btn"
-            onClick={() =>
-              window.open(card.live, "_blank")
-            }
+        {projectCards.map((card, index) => (
+          <div
+            key={`${card.title}-${index}`}
+            className="card"
+            ref={setCardRef}
           >
-            Live Preview
-          </button>
+            <div className="card-media">
+              <img
+                src={card.img}
+                alt={card.title}
+              />
+            </div>
 
-          <button
-            className="github-btn"
-            onClick={() =>
-              window.open(card.github, "_blank")
-            }
-          >
-            GitHub
-          </button>
+            <div className="card-info">
+              <h3>{card.title}</h3>
 
-        </div>
+              <p className="card-desc">
+                {card.desc}
+              </p>
 
-      </div>
+              {/* TECH STACK */}
 
-    </div>
+              <div className="tech-stack">
+                {card.tech.map((tech) => (
+                  <span
+                    className="tech-item"
+                    key={tech.name}
+                  >
+                    <img
+                      src={tech.icon}
+                      alt={tech.name}
+                      className="tech-icon"
+                    />
 
-  ))}
+                    {tech.name}
+                  </span>
+                ))}
+              </div>
 
-</div>
+              {/* BUTTONS */}
 
+              <div className="card-buttons">
+                <button
+                  className="live-btn"
+                  onClick={() =>
+                    window.open(card.live, "_blank")
+                  }
+                >
+                  Live Preview
+                </button>
+
+                <button
+                  className="github-btn"
+                  onClick={() =>
+                    window.open(card.github, "_blank")
+                  }
+                >
+                  <img src="/skill-icons/GitHub.svg" alt="github-icon" className="github-icon"/>
+                  GitHub
+                </button>
+
+              </div>
+            </div>
+          </div>
+        ))}
       </section>
-
-    
     </>
   );
 };

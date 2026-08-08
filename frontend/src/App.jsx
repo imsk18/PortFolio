@@ -27,11 +27,11 @@ function App() {
       <Home theme={theme}/>
       <About theme={theme} />
     
-      <Skill/>
+      <Skill theme={theme}/>
       <Education theme={theme}/>
-      <Project/>
-      <ContactForm/>
-      <Footer/>
+      <Project theme={theme}/>
+      <ContactForm theme={theme}/>
+      <Footer theme={theme}/>
 
     </div>
   )

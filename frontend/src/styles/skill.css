@@ -18,10 +18,11 @@ body{
   height:100vh;
 
   overflow:hidden;
+  
 
-  /* background: */
-  /* radial-gradient(circle at top,#1f2937,#0f172a 60%); */
-  background-color:  rgb(137, 122, 122);;
+  background:
+  radial-gradient(circle at top,#7295c6,#8d50e3 60%);
+  
 }
 .heading{
   width: 100vw;

@@ -74,6 +74,7 @@ useGSAP(() => {
       },
     });
   });
+  
 
   // ================= TABLET =================
   mm.add("(min-width: 601px) and (max-width: 1023px)", () => {
@@ -172,7 +173,7 @@ useGSAP(() => {
 
 
       <div className="right">
-        <img ref={imgRef} src="/dp.jpeg" alt="" />
+        <img ref={imgRef} src={theme === "light"? "/dp.jpeg" :"/dp-dark.jpeg"} alt="" />
       </div>
 
 

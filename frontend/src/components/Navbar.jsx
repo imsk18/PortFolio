@@ -19,7 +19,7 @@ const Navbar = ({theme , changeTheme}) => {
             <a href="#contact"      onClick={()=>setMenuOpen(false)}>CONTACT</a>
             <a href="#"      onClick={()=>setMenuOpen(false)}></a>
         </div>
-        <button onClick={changeTheme}>  {theme === "light" ? "🌙" : <i class="ri-sun-fill"></i>}</button>
+        <button onClick={changeTheme}>  {theme === "light" ?  <i class="ri-sun-fill"></i> : <i class="ri-moon-fill"></i>}</button>
         <div className={`menu-icon ${menuOpen ? "active" : ""}`}  onClick={handleLinks}>
           <span></span>
           <span></span>

@@ -1,37 +1,35 @@
 import React from "react";
 import "../styles/footer.css";
 
-const Footer = () => {
+const Footer = ({theme}) => {
   return (
-    <footer id="footer">
-
+    <footer id="footer"  style={{
+        backgroundColor: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+      
+      }}   >
       <div className="footer-container">
-
         {/* LEFT */}
 
         <div className="footer-brand">
-
           <h2>Shatrudhan Kumar</h2>
 
           <p>
-            Thank you for visiting my personal portfolio website.
-            I love building modern and creative web experiences.
+            Thank you for visiting my personal portfolio website. I love
+            building modern and creative web experiences.
           </p>
 
           <p>
             Keep Rising 🚀 Let's connect and build something amazing together.
           </p>
-
         </div>
 
         {/* CENTER */}
 
         <div className="footer-links">
-
           <h3>Quick Links</h3>
 
           <ul>
-
             <li>
               <a href="#home">Home</a>
             </li>
@@ -54,15 +52,12 @@ const Footer = () => {
             <li>
               <a href="#contact">Contact</a>
             </li>
-
           </ul>
-
         </div>
 
         {/* RIGHT */}
 
         <div className="footer-contact">
-
           <h3>Contact Info</h3>
 
           <p>
@@ -76,20 +71,11 @@ const Footer = () => {
           </p>
 
           <div className="social-icons">
-
-            <a
-              href="https://github.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://github.com/" target="_blank" rel="noreferrer">
               <i className="ri-github-fill"></i>
             </a>
 
-            <a
-              href="https://linkedin.com/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
               <i className="ri-linkedin-box-fill"></i>
             </a>
 
@@ -101,32 +87,20 @@ const Footer = () => {
               <i className="ri-instagram-line"></i>
             </a>
 
-            <a
-              href="https://telegram.org/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://telegram.org/" target="_blank" rel="noreferrer">
               <i className="ri-telegram-fill"></i>
             </a>
-
           </div>
-
         </div>
-
       </div>
 
       {/* BOTTOM */}
 
       <div className="footer-bottom">
-
         <hr />
 
-        <small>
-          Designed with ❤️ by SK | © 2026 All Rights Reserved
-        </small>
-
+        <small>Designed with ❤️ by SK | © 2026 All Rights Reserved</small>
       </div>
-
     </footer>
   );
 };

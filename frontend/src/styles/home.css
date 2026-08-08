@@ -17,7 +17,7 @@ body{
   width: 70%;
   margin-left: 0%;
   /* background-color: #5f1752; */
-  background-color:  rgb(176, 160, 160);
+  background-color:  rgb(157, 154, 154);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -37,7 +37,8 @@ body{
 #navbar button{
   background-color: transparent;
   border-bottom: none;
-  color: blue;
+  color: rgb(29, 29, 33);
+  font-size: 1rem;
 }
 .all-links {
   display: flex;
