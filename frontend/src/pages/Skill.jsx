@@ -57,16 +57,23 @@ const skills = [
   },
 ];
 
-export default function Skill() {
+export default function Skill({theme}) {
   const canvasRef = useRef(null);
 
   const [gather, setGather] = useState(false);
+  const isLightTheme = theme === "light";
 
   useEffect(() => {
 
     const canvas = canvasRef.current;
+    if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
+    const gridColor = isLightTheme ? "rgba(17,17,17,0.08)" : "rgba(255,255,255,0.08)";
+    const lineColor = isLightTheme ? "rgba(17,17,17,0.15)" : "rgba(255,255,255,0.15)";
+    const nodeGlow = isLightTheme ? "rgba(17,17,17,0.05)" : "rgba(255,255,255,0.05)";
+    const nodeFill = isLightTheme ? "rgba(17,17,17,0.08)" : "rgba(255,255,255,0.08)";
+    const textColor = isLightTheme ? "#111" : "#fff";
 
     const center = {
       x: window.innerWidth / 2,
@@ -239,8 +246,7 @@ export default function Skill() {
 
         ctx.lineTo(this.x, this.y);
 
-        ctx.strokeStyle =
-          "rgba(255,255,255,0.15)";
+        ctx.strokeStyle = lineColor;
 
         ctx.lineWidth = animatedWidth;
 
@@ -258,8 +264,7 @@ export default function Skill() {
           Math.PI * 2
         );
 
-        ctx.fillStyle =
-          "rgba(255,255,255,0.05)";
+        ctx.fillStyle = nodeGlow;
 
         ctx.fill();
 
@@ -275,8 +280,7 @@ export default function Skill() {
           Math.PI * 2
         );
 
-        ctx.fillStyle =
-          "rgba(255,255,255,0.08)";
+        ctx.fillStyle = nodeFill;
 
         ctx.fill();
 
@@ -308,7 +312,7 @@ export default function Skill() {
 
         /* text */
 
-        ctx.fillStyle = "white";
+        ctx.fillStyle = textColor;
 
         ctx.font =
           window.innerWidth < 768
@@ -336,8 +340,7 @@ export default function Skill() {
           ? 35
           : 55;
 
-      ctx.strokeStyle =
-        "rgba(255,255,255,0.04)";
+      ctx.strokeStyle = gridColor;
 
       ctx.lineWidth = 1;
 
@@ -446,23 +449,32 @@ export default function Skill() {
       );
     };
 
-  }, [gather]);
+  }, [gather, isLightTheme]);
 
   return (
-    <section id="skill">
-      <div className="heading"><img className="heading-img" src="layer.png" alt="" />
+    <section id="skill"  style={{
+        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
+        color: isLightTheme ? "#111" : "#fff",
+       
+      }}>
+      <div className="heading"><img className="heading-img" src="layer.png" alt="" style={{ filter: isLightTheme ? "none" : "brightness(0) invert(1)" }} />
        <h1 >SKILLS</h1>
       </div>
      
 
-      <div className="grid-bg"></div>
+      <div className="grid-bg" ></div>
 
       <canvas
         ref={canvasRef}
         className="skill-canvas"
+        
       />
 
-      <div className="heading-wrapper">
+      <div className="heading-wrapper" style={{
+       
+        color: isLightTheme ? "#111" : "#fff",
+       
+      }}>
 
         <h1
           className="main-heading"

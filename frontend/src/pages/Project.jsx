@@ -1,5 +1,3 @@
-
-
 import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import "../styles/project.css";
@@ -17,7 +15,8 @@ const projectCards = [
     tech: [
       {
         name: "React",
-       icon: "/skill-icons/React.svg",
+        icon: "/skill-icons/React.svg",
+        color: "#61DAFB",
       },
       {
         name: "GSAP",
@@ -82,7 +81,7 @@ const projectCards = [
   },
 ];
 
-const Project = ({ theme}) => {
+const Project = ({ theme }) => {
   const mainRef = useRef(null);
   const cardsRef = useRef([]);
 
@@ -130,7 +129,7 @@ const Project = ({ theme}) => {
             duration: 1,
             ease: "power3.out",
           },
-          i
+          i,
         );
 
         /* OLD CARD MOVE LITTLE UP */
@@ -144,7 +143,7 @@ const Project = ({ theme}) => {
               opacity: 0.65,
               duration: 1,
             },
-            i
+            i,
           );
         }
       });
@@ -192,7 +191,7 @@ const Project = ({ theme}) => {
           ease: "none",
           duration: 1,
         },
-        i * 0.3
+        i * 0.3,
       );
     });
 
@@ -213,28 +212,23 @@ const Project = ({ theme}) => {
 
   return (
     <>
-      <section id="project" ref={mainRef} style={{
-        backgroundColor: theme === "light" ? "white" : "black",
-        color: theme === "light" ? "black" : "white",
-      
-      }} >
+      <section
+        id="project"
+        ref={mainRef}
+        style={{
+          backgroundColor: theme === "light" ? "white" : "black",
+          color: theme === "light" ? "black" : "white",
+        }}
+      >
         <div className="p-heading">
-          <img
-            className="heading-img"
-            src="/pro.png"
-            alt=""
-          />
+          <img className="heading-img" src="/pro.png" alt="" />
 
           <h1>PROJECTS</h1>
         </div>
 
         {/* DESKTOP CURVE */}
 
-        <svg
-          width="100vw"
-          height="100%"
-          viewBox="0 0 1000 500"
-        >
+        <svg width="100vw" height="100%" viewBox="0 0 1000 500">
           <path
             id="curve"
             d="M100,350 Q500,50 900,350"
@@ -246,24 +240,15 @@ const Project = ({ theme}) => {
         {/* CARDS */}
 
         {projectCards.map((card, index) => (
-          <div
-            key={`${card.title}-${index}`}
-            className="card"
-            ref={setCardRef}
-          >
+          <div key={`${card.title}-${index}`} className="card" ref={setCardRef}>
             <div className="card-media">
-              <img
-                src={card.img}
-                alt={card.title}
-              />
+              <img src={card.img} alt={card.title} />
             </div>
 
             <div className="card-info">
               <h3>{card.title}</h3>
 
-              <p className="card-desc">
-                {card.desc}
-              </p>
+              <p className="card-desc">{card.desc}</p>
 
               {/* TECH STACK */}
 
@@ -272,6 +257,7 @@ const Project = ({ theme}) => {
                   <span
                     className="tech-item"
                     key={tech.name}
+                    style={{ color: tech.color }}
                   >
                     <img
                       src={tech.icon}
@@ -289,23 +275,22 @@ const Project = ({ theme}) => {
               <div className="card-buttons">
                 <button
                   className="live-btn"
-                  onClick={() =>
-                    window.open(card.live, "_blank")
-                  }
+                  onClick={() => window.open(card.live, "_blank")}
                 >
                   Live Preview
                 </button>
 
                 <button
                   className="github-btn"
-                  onClick={() =>
-                    window.open(card.github, "_blank")
-                  }
+                  onClick={() => window.open(card.github, "_blank")}
                 >
-                  <img src="/skill-icons/GitHub.svg" alt="github-icon" className="github-icon"/>
+                  <img
+                    src="/skill-icons/GitHub.svg"
+                    alt="github-icon"
+                    className="github-icon"
+                  />
                   GitHub
                 </button>
-
               </div>
             </div>
           </div>

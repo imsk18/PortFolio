@@ -21,10 +21,17 @@ const About = ({theme}) => {
          <img src="./public/s.jpg" alt="" />
         </div> 
 
-         <div className="left-img">
+         {/* <div className="left-img">
        
          <img src="./public/s.jpg" alt="" />
-        </div>
+        </div> */}
+       <div className="left-img">
+  <img
+    id="aboutImageTarget"
+    src="/s.jpg"
+    alt=""
+  />
+</div>
        
         
        
@@ -40,7 +47,7 @@ const About = ({theme}) => {
 </p>
         </div>
        <div className="info">
-         <span>place: <a href="">Bihar-India-845301</a></span>
+         <span >place: <a href="">Bihar-India-845301</a></span>
         <span>email: <a href="">kumarshatrudhan94263@gmail.com</a></span>
        </div>
        

@@ -2,13 +2,19 @@ import React from "react";
 import "../styles/footer.css";
 
 const Footer = ({theme}) => {
+  const isLightTheme = theme === "light";
+
   return (
     <footer id="footer"  style={{
-        backgroundColor: theme === "light" ? "white" : "black",
-        color: theme === "light" ? "black" : "white",
+        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
+        color: isLightTheme ? "#111" : "#fff",
       
       }}   >
-      <div className="footer-container">
+      <div className="footer-container"  style={{
+        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
+        color: isLightTheme ? "#111" : "#fff",
+      
+      }}   >
         {/* LEFT */}
 
         <div className="footer-brand">
@@ -26,7 +32,11 @@ const Footer = ({theme}) => {
 
         {/* CENTER */}
 
-        <div className="footer-links">
+        <div className="footer-links"  style={{
+        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
+        color: isLightTheme ? "#111" : "#fff",
+      
+      }}  >
           <h3>Quick Links</h3>
 
           <ul>
@@ -70,7 +80,11 @@ const Footer = ({theme}) => {
             kumarshatrudhan94263@gmail.com
           </p>
 
-          <div className="social-icons">
+          <div className="social-icons"   style={{
+        
+        color: isLightTheme ? "#111" : "#fff",
+      
+      }}  >
             <a href="https://github.com/" target="_blank" rel="noreferrer">
               <i className="ri-github-fill"></i>
             </a>

@@ -1,12 +1,13 @@
+
 #contact {
   min-height: 100vh;
 
   background: linear-gradient(
     to bottom,
-    #dcecf0 0%,
-    #dcecf0 50%,
-    #f5f5f5 50%,
-    #f5f5f5 100%
+    rgba(74, 132, 128, 0.915) 0%,
+    rgb(200, 216, 221) 50%,
+    rgb(226, 224, 224),
+    rgb(240, 239, 239) 100%
   );
 
   padding: 100px 20px;
@@ -29,7 +30,7 @@
 }
 
 .contact-header p {
-  color: #555;
+  /* color: #555; */
   line-height: 1.7;
 }
 
@@ -40,7 +41,7 @@
 
   display: flex;
 
-  background: white;
+  /* background: white; */
   border-radius: 20px;
 
   overflow: hidden;
@@ -50,8 +51,8 @@
 
 .contact-info {
   width: 35%;
-  background: #00b8b8;
-  color: white;
+  /* background: #00b8b8; */
+  /* color: white; */
 
   padding: 30px ;
   position: relative;
@@ -66,18 +67,19 @@
   line-height: 1.2;
   margin-bottom: 40px;
   font-size: 15px;
+  /* color: white; */
 }
 
 .info-item {
   display: flex;
   align-items: center;
   gap: 15px;
-  color: #f5f5f5;
+  /* color: #f5f5f5; */
 
   margin-bottom: 10px;
 }
 .info-item span {
-  color: black;
+  /* color: black; */
 }
 
 .info-item i {
@@ -107,7 +109,9 @@
 .input-group textarea {
   width: 100%;
   border: none;
-  border-bottom: 2px solid #d9d9d9;
+  border-bottom: 2px solid var(--contact-border-color, #d9d9d9);
+  color: var(--contact-text-color, #111);
+  caret-color: var(--contact-text-color, #111);
 
   outline: none;
   background: transparent;
@@ -121,7 +125,7 @@
   left: 0;
   top: 12px;
 
-  color: #777;
+  color: var(--contact-label-color, #666);
   pointer-events: none;
 
   transition: 0.3s;
@@ -133,17 +137,18 @@
 .input-group textarea:valid + label {
   top: -12px;
   font-size: 13px;
-  color: #00b8b8;
+  /* color: var(--contact-accent-color, #00b8b8); */
 }
 
 .input-group input:focus,
 .input-group textarea:focus {
-  border-bottom-color: #00b8b8;
+  border-bottom-color: var(--contact-accent-color, #00b8b8);
 }
 
 textarea {
   resize: none;
   min-height: 20px;
+  
 }
 
 button {
@@ -152,8 +157,8 @@ button {
   border-radius: 8px;
   margin:3px;
 
-  background: #00b8b8;
-  color: white;
+  /* background: #00b8b8; */
+  /* color: white; */
 
   font-size: 15px;
   cursor: pointer;
