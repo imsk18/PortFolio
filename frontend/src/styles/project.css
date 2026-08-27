@@ -65,13 +65,14 @@ svg {
   padding: 14px;
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 1px;
 }
 
 .card-info h3 {
   margin: 0;
   font-size: 1.15rem;
   font-weight: 700;
+  color: black;
 }
 
 .card-desc {
@@ -83,33 +84,66 @@ svg {
 .tech-stack {
   display: flex;
   gap: 5px;
+  flex-wrap: wrap;
+  padding-top: 10px;
+
+ 
 }
 
 .tech-stack span {
   color: #d12828;
   padding-inline: 10px;
-  padding-block: 5px;
+  padding-block: 3px;
   border-radius: 20px;
-  background: #e4d0ce;
+  /* background: ; */
+  border: 2px solid green;
   font-size: 11px;
   display: flex;
+  gap: 0.2rem;
   flex-direction: row;
   align-items: center;
-  gap: 5px;
+  /* flex-wrap: wrap; */
+  
 }
 
-.tech-stack span:first-child {
-  color: #249b09;
-}
 
-.tech-stack span:last-child {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* .tech-stack span:first-child {
+  color: #17d2d5;
+  border: 2px solid rgb(15, 162, 162);
+  background:rgba(189, 234, 234, 0.821);
+} */
+
+/* .tech-stack span:last-child {
   color: #1689fc;
-}
+   border: 2px solid rgb(20, 230, 230);
+} */
 
 .card-buttons {
   display: flex;
   gap: 10px;
   margin-top: 8px;
+  padding-top: 10px;
 }
 
 .card-buttons button {
@@ -128,7 +162,7 @@ svg {
 }
 
 .live-btn:hover {
-  background-color: #d12828;
+  background-color: gold;
 }
 
 .github-btn {

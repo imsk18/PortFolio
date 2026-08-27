@@ -18,13 +18,16 @@ const projectCards = [
         icon: "/skill-icons/React.svg",
         color: "#61DAFB",
       },
+     
       {
         name: "GSAP",
         icon: "/gsap.svg",
+        color:"#47A248"
       },
       {
-        name: "Node.js",
-        icon: "/node.svg",
+        name: "CSS",
+        icon: "/skill-icons/CSS3.svg",
+        color:"#1572B6"
       },
     ],
 
@@ -41,14 +44,17 @@ const projectCards = [
       {
         name: "React",
         icon: "/skill-icons/React.svg",
+        color: "#61DAFB",
       },
       {
         name: "Express",
-        icon: "/icons/express.svg",
+        icon: "/skill-icons/Express.svg",
+        color:"#000000"
       },
       {
         name: "MongoDB",
-        icon: "/icons/mongodb.svg",
+        icon: "/skill-icons/MongoDB.svg",
+        color:"#47A248"
       },
     ],
 
@@ -64,15 +70,19 @@ const projectCards = [
     tech: [
       {
         name: "React",
-        icon: "/icons/react.svg",
+        icon: "/skill-icons/React.svg",
+        color:"#61DAFB"
       },
+      
       {
         name: "Express",
-        icon: "/icons/express.svg",
+        icon: "/skill-icons/Express.svg",
+        color:"#000000"
       },
       {
         name: "MongoDB",
-        icon: "/icons/mongodb.svg",
+        icon: "/skill-icons/MongoDB.svg",
+        color:"#47A248"
       },
     ],
 
@@ -257,7 +267,7 @@ const Project = ({ theme }) => {
                   <span
                     className="tech-item"
                     key={tech.name}
-                    style={{ color: tech.color }}
+                    style={{ color: tech.color , border:`2px solid ${tech.color}` }}
                   >
                     <img
                       src={tech.icon}
