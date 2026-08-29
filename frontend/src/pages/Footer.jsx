@@ -1,22 +1,16 @@
 import React from "react";
 import "../styles/footer.css";
 
-const Footer = ({theme}) => {
+const Footer = ({ theme }) => {
   const isLightTheme = theme === "light";
 
   return (
-    <footer id="footer"  style={{
-        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
-        color: isLightTheme ? "#111" : "#fff",
-      
-      }}   >
-      <div className="footer-container"  style={{
-        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
-        color: isLightTheme ? "#111" : "#fff",
-      
-      }}   >
+    <footer
+      id="footer"
+      className={isLightTheme ? "footer light" : "footer dark"}
+    >
+      <div className="footer-container">
         {/* LEFT */}
-
         <div className="footer-brand">
           <h2>Shatrudhan Kumar</h2>
 
@@ -31,12 +25,7 @@ const Footer = ({theme}) => {
         </div>
 
         {/* CENTER */}
-
-        <div className="footer-links"  style={{
-        backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
-        color: isLightTheme ? "#111" : "#fff",
-      
-      }}  >
+        <div className="footer-links">
           <h3>Quick Links</h3>
 
           <ul>
@@ -51,6 +40,7 @@ const Footer = ({theme}) => {
             <li>
               <a href="#skill">Skill</a>
             </li>
+
             <li>
               <a href="#Education">Education</a>
             </li>
@@ -66,7 +56,6 @@ const Footer = ({theme}) => {
         </div>
 
         {/* RIGHT */}
-
         <div className="footer-contact">
           <h3>Contact Info</h3>
 
@@ -80,28 +69,40 @@ const Footer = ({theme}) => {
             kumarshatrudhan94263@gmail.com
           </p>
 
-          <div className="social-icons"   style={{
-        
-        color: isLightTheme ? "#111" : "#fff",
-      
-      }}  >
-            <a href="https://github.com/" target="_blank" rel="noreferrer">
+          <div className="social-icons">
+            <a
+              href="https://github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="GitHub"
+            >
               <i className="ri-github-fill"></i>
             </a>
 
-            <a href="https://linkedin.com/" target="_blank" rel="noreferrer">
+            <a
+              href="https://linkedin.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+            >
               <i className="ri-linkedin-box-fill"></i>
             </a>
 
             <a
-              href="https://www.instagram.com/snx_8een?igsh=MW81eXhtY2x0ajN3Nw=="
+              href="https://www.instagram.com/snx_8een"
               target="_blank"
-              rel="noreferrer"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
             >
               <i className="ri-instagram-line"></i>
             </a>
 
-            <a href="https://telegram.org/" target="_blank" rel="noreferrer">
+            <a
+              href="https://telegram.org/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Telegram"
+            >
               <i className="ri-telegram-fill"></i>
             </a>
           </div>
@@ -109,11 +110,12 @@ const Footer = ({theme}) => {
       </div>
 
       {/* BOTTOM */}
-
       <div className="footer-bottom">
         <hr />
 
-        <small>Designed with ❤️ by SK | © 2026 All Rights Reserved</small>
+        <small>
+          Designed with ❤️ by SK | © 2026 All Rights Reserved
+        </small>
       </div>
     </footer>
   );
