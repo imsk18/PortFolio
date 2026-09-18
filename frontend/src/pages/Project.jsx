@@ -8,6 +8,33 @@ gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
 const projectCards = [
   {
+    title: "Vaishno devi web design",
+    img: "/project-img/img3.png",
+    desc: "Created a Vaishno Devi interactive website using HTML, CSS, and JavaScript, featuring a scroll-based image frame sequence animation for an immersive hero experience. The website includes smooth animations, responsive design, navigation, gallery, and informative sections about the Vaishno Devi pilgrimage.",
+
+    tech: [
+      {
+        name: "javaScript",
+        icon: "/skill-icons/JavaScript.svg",
+        color: "#fbf161",
+      },
+     
+      {
+        name: "GSAP",
+        icon: "/gsap.svg",
+        color:"#47A248"
+      },
+      {
+        name: "CSS",
+        icon: "/skill-icons/CSS3.svg",
+        color:"#1572B6"
+      },
+    ],
+
+    live: "https://vaishnodevi-web-design-ko78-ecj062t9e-shatrudhan-s-projects1.vercel.app/",
+    github: "https://github.com/imsk18/Vaishnodevi_web_design.git",
+  },
+  {
     title: "Portfolio Website",
     img: "/project-img/img2.png",
     desc: "Modern responsive portfolio website.",

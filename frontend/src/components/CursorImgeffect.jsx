@@ -1,12 +1,34 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import "../styles/c.css";
 
 const CursorImgEffect = ({ targetRef }) => {
   const images = [
-    "/img1.jpg",
-    "/img2.jpg",
-    "/img3.jpg",
-    "/img4.jpg",
+    // "/img1.jpg",
+    // "/img2.jpg",
+
+    // "/img3.jpg",
+    // "/img3.jpg",
+    // "https://i.pinimg.com/736x/a8/a6/ca/a8a6ca15aba3a6433694a1146f050396.jpg",
+    // "https://i.pinimg.com/736x/09/7b/6a/097b6a84a90ffefb077998a3e8a3f2fc.jpg",
+    // "https://i.pinimg.com/736x/62/a8/99/62a899f88e97f59d38086e57e7eecd28.jpg",
+    // "https://i.pinimg.com/1200x/23/dc/a4/23dca414143cf727bcea9770b7231d17.jpg",
+
+    
+    "/skill-icons/MongoDB.svg",
+    "/skill-icons/Express.svg",
+     "/skill-icons/React.svg",
+    "/skill-icons/Node.js.svg",
+    "/skill-icons/JavaScript.svg",
+    "/skill-icons/HTML5.svg",
+    "/skill-icons/CSS3.svg",
+
+    "/skill-icons/Postman.svg",
+    "/skill-icons/GitHub.svg",
+    
+    
+   
+    
   ];
 
   const containerRef = useRef(null);
@@ -48,14 +70,17 @@ const CursorImgEffect = ({ targetRef }) => {
       img.src = images[imageIndexRef.current];
 
       img.style.cssText = `
-        position:absolute;
-        left:${x}px;
-        top:${y}px;
-        width:130px;
-        height:230px;
-        object-fit:cover;
-        border-radius:8px;
-        pointer-events:none;
+        position: absolute;
+    left: ${x}px;
+    top: ${y}px;
+    width: 120px;
+    height: 110px;
+    object-fit: cover;
+    border-radius: 12px;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    width: 120px;
+
       `;
 
       container.appendChild(img);
@@ -80,7 +105,7 @@ const CursorImgEffect = ({ targetRef }) => {
             gsap.to(img, {
               scale: 0.2,
               opacity: 0,
-              duration: 0.8,
+              duration: 0.7,
               ease: "power2.in",
               onComplete: () => img.remove(),
             });

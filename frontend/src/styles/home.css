@@ -17,7 +17,7 @@ body{
   width: 70%;
   margin-left: 0%;
   /* background-color: #5f1752; */
-  background-color:  rgb(157, 154, 154);
+  background-color:  rgba(245, 235, 235, 0.795);
   display: flex;
   align-items: center;
   justify-content: space-between;

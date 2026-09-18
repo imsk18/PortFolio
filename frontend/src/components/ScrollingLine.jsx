@@ -121,10 +121,10 @@ function ScrollingLine() {
       // scrolling up
       else {
         gsap.to(".marquee", {
-          x: "0%",
+          x: "100%",
           repeat: -1,
           duration: 6,
-          ease: "linear",
+          ease: "expo.out",
         });
 
         gsap.to(".Arrow, .marquee1 img", {
