@@ -96,50 +96,50 @@ const imageUrl =
   "https://www.brandium.nl/wp-content/uploads/2023/07/arrow-br.svg";
 
 function ScrollingLine() {
-  useEffect(() => {
-    let lastScrollTop = 0;
-
-    const scrollHandler = () => {
-      let currentScroll =
-        window.pageYOffset || document.documentElement.scrollTop;
-
-      // scrolling down
-      if (currentScroll > lastScrollTop) {
-        gsap.to(".marquee", {
-          x: "-200%",
+   useEffect(() => {
+    const wheelHandler = (event) => {
+      if (event.deltaY > 0) {
+        gsap.to('.marquee', {
+          transform: 'translateX(-200%)',
           repeat: -1,
-          duration: 6,
-          ease: "linear",
+          duration: 4,
+          ease: 'linear'
         });
 
-        gsap.to(".Arrow, .marquee1 img", {
-          rotate: 180,
-          duration: 0.3,
+        gsap.to('.marquee1', {
+          transform: 'translateX(-200%)',
+          repeat: -1,
+          duration: 4,
+          ease: 'linear'
+        });
+
+        gsap.to('.Arrow, .marquee1 img', {
+          rotate: 180
+        });
+      } else {
+        gsap.to('.marquee', {
+          transform: 'translateX(0%)',
+          repeat: -1,
+          duration: 4,
+          ease: 'linear'
+        });
+
+        gsap.to('.marquee1', {
+          transform: 'translateX(0%)',
+          repeat: -1,
+          duration: 4,
+          ease: 'linear'
+        });
+
+        gsap.to('.marquee img, .marquee1 img', {
+          rotate: 0
         });
       }
-
-      // scrolling up
-      else {
-        gsap.to(".marquee", {
-          x: "100%",
-          repeat: -1,
-          duration: 6,
-          ease: "expo.out",
-        });
-
-        gsap.to(".Arrow, .marquee1 img", {
-          rotate: 0,
-          duration: 0.3,
-        });
-      }
-
-      lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
     };
 
-    window.addEventListener("scroll", scrollHandler);
-
+    window.addEventListener('wheel', wheelHandler);
     return () => {
-      window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener('wheel', wheelHandler);
     };
   }, []);
 
