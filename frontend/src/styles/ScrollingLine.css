@@ -2,7 +2,11 @@
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  background-color: #d15f5f;
   overflow-x: hidden;
   /* z-index: ; */
 } 
@@ -10,14 +14,23 @@
 .move
 {
   display: flex;
-  overflow: hidden;
-  width: 100%;
+  width: max-content;
+  min-width: 10%;
+  padding-right: 30px;
   height: 30px;
-   background-color:  transparent;
   position: relative;
-  z-index: 1;
+  z-index: 100;
+  will-change: transform;
+  background-color: red;
 }
-
+.Arrow {
+  transform-origin: center center;
+  display: block;
+}
+.marquee-group {
+  display: flex;
+  flex-shrink: 0;
+}
 .marquee,
 .marquee1 {
   padding-left: 10px;
@@ -31,14 +44,24 @@
 .marquee img,
 .marquee1 img {
   height: 25px;
+  width: 25px;
+  object-fit: contain;
 }
 
 .marquee h1,
 .marquee1 h1 {
   font-size: clamp(1rem, 2vw, 1.5rem);
 }
-@media (max-width:600px){
-  .marquee h1{
-    font-size: camp(1rem, 1vw, 1rem);
+@media (max-width: 600px) {
+  .marquee,
+  .marquee1 {
+    gap: 16px;
+    padding: 6px 10px;
+  }
+
+  .marquee img,
+  .marquee1 img {
+    height: 22px;
+    width: 22px;
   }
 }
