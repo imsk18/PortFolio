@@ -1,104 +1,78 @@
-import React from 'react'
-import '../styles/about.css';
-import ScrollingLine from '../components/ScrollingLine';
+import React from "react";
+import "../styles/about.css";
+import ScrollingLine from "../components/ScrollingLine";
+import CursorImgEffect from "../components/CursorImgeffect";
 
-const About = ({theme}) => {
+const About = ({ theme }) => {
   return (
-    
-    <div id='about' style={{
+    <div
+      id="about"
+      style={{
         backgroundColor: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
-      
-      }} >
+      }}
+    >
+      <CursorImgEffect/>
       <div className="header">
-           <h1 className='a-h1' ><i class="ri-user-fill"></i> About me</h1>
+        <h1 className="a-h1">
+          <i class="ri-user-fill"></i> About me
+        </h1>
       </div>
- 
-      {<div className="img-container">
 
-        <div className="right-img">
-          <img src="./public/s.jpg" alt="" />
-         <img src="./public/s.jpg" alt="" />
-        </div> 
+      {
+        <div className="img-container">
+          <div className="right-img">
+            <img src="./public/s.jpg" alt="" />
+            <img src="./public/s.jpg" alt="" />
+          </div>
 
-         {/* <div className="left-img">
+          {/* <div className="left-img">
        
          <img src="./public/s.jpg" alt="" />
         </div> */}
-       <div className="left-img">
-  <img
-    id="aboutImageTarget"
-    src="/s.jpg"
-    alt=""
-  />
-</div>
-       
-        
-       
-      </div> } 
+          <div className="left-img">
+            <img id="aboutImageTarget" src="/s.jpg" alt="" />
+          </div>
+        </div>
+      }
 
       <div className="about-info">
         <div className="upper">
-           <h2>I'm Shatrudhan</h2>
-        <h4>fullstack developer</h4>
+          <h2>I'm Shatrudhan</h2>
+          <h4>fullstack developer</h4>
         </div>
         <div className="middle">
-           <p>Hi, I'm Shatrudhan Kumar, a BCA student and Full-Stack Developer passionate about building modern and user-friendly web applications. I enjoy learning new technologies and turning ideas into real-world solutions.
-</p>
+          <p>
+            Hi, I'm Shatrudhan Kumar, a BCA student and Full-Stack Developer
+            passionate about building modern and user-friendly web applications.
+            I enjoy learning new technologies and turning ideas into real-world
+            solutions.
+          </p>
         </div>
-       <div className="info">
-         <span >place: <a href="">Bihar-India-845301</a></span>
-        <span>email: <a href="">kumarshatrudhan94263@gmail.com</a></span>
-       </div>
-       
-       
-       
+        <div className="info">
+          <span>
+            place: <a href="">Bihar-India-845301</a>
+          </span>
+          <span>
+            email: <a href="">kumarshatrudhan94263@gmail.com</a>
+          </span>
+        </div>
       </div>
       <ScrollingLine />
     </div>
-  )
-}
+  );
+};
 
-export default About
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+export default About;
 
 // import React, { useState } from 'react'
 
 // const About = () => {
 //   const Skilldata = [
 //     { name:'html',percent:65 },
-     
+
 //     {name:'CSS',percent:60 },
-      
-   
+
 //     {
 //       name:'javaScript',
 //       percent:60
@@ -143,9 +117,8 @@ export default About
 //   })
 // console.log(Pos);
 
-
 //  }
-  
+
 //   return (
 //     <div id='about'>
 //       {Skilldata.map((skill,idx)=>{
@@ -156,11 +129,10 @@ export default About
 //         <div className="outer">
 //           <div className="inner" style={{width:`${Progress[idx]}%`}}></div>
 //         </div>
-       
+
 //       </div>
 //       })}
-      
-       
+
 // <button onClick={handleAnimation}>click</button>
 //     </div>
 //   )

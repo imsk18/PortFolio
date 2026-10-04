@@ -3,6 +3,7 @@ import { gsap } from "gsap";
 import "../styles/project.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import CursorImgEffect from "../components/CursorImgeffect";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
@@ -257,6 +258,7 @@ const Project = ({ theme }) => {
           color: theme === "light" ? "black" : "white",
         }}
       >
+        <CursorImgEffect targetRef={mainRef}/>
         <div className="p-heading">
           <img className="heading-img" src="/pro.png" alt="" />
 

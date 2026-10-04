@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import '../styles/skill.css';
+import "../styles/skill.css";
 
 const skills = [
   {
@@ -57,22 +57,29 @@ const skills = [
   },
 ];
 
-export default function Skill({theme}) {
+export default function Skill({ theme }) {
   const canvasRef = useRef(null);
 
   const [gather, setGather] = useState(false);
   const isLightTheme = theme === "light";
 
   useEffect(() => {
-
     const canvas = canvasRef.current;
     if (!canvas) return;
 
     const ctx = canvas.getContext("2d");
-    const gridColor = isLightTheme ? "rgba(17,17,17,0.08)" : "rgba(255,255,255,0.08)";
-    const lineColor = isLightTheme ? "rgba(17,17,17,0.15)" : "rgba(255,255,255,0.15)";
-    const nodeGlow = isLightTheme ? "rgba(17,17,17,0.05)" : "rgba(255,255,255,0.05)";
-    const nodeFill = isLightTheme ? "rgba(17,17,17,0.08)" : "rgba(255,255,255,0.08)";
+    const gridColor = isLightTheme
+      ? "rgba(17,17,17,0.08)"
+      : "rgba(255,255,255,0.08)";
+    const lineColor = isLightTheme
+      ? "rgba(17,17,17,0.15)"
+      : "rgba(255,255,255,0.15)";
+    const nodeGlow = isLightTheme
+      ? "rgba(17,17,17,0.05)"
+      : "rgba(255,255,255,0.05)";
+    const nodeFill = isLightTheme
+      ? "rgba(17,17,17,0.08)"
+      : "rgba(255,255,255,0.08)";
     const textColor = isLightTheme ? "#111" : "#fff";
 
     const center = {
@@ -87,7 +94,6 @@ export default function Skill({theme}) {
     };
 
     function resizeCanvas() {
-
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
 
@@ -98,32 +104,22 @@ export default function Skill({theme}) {
     resizeCanvas();
 
     class Node {
-
       constructor(skill) {
-
         this.skill = skill;
 
-        this.radius =
-          window.innerWidth < 768 ? 20 : 38;
+        this.radius = window.innerWidth < 768 ? 20 : 38;
 
-        this.padding =
-          this.radius + 55;
+        this.padding = this.radius + 55;
 
         this.x =
-          Math.random() *
-          (canvas.width - this.padding * 2) +
-          this.padding;
+          Math.random() * (canvas.width - this.padding * 2) + this.padding;
 
         this.y =
-          Math.random() *
-          (canvas.height - this.padding * 2) +
-          this.padding;
+          Math.random() * (canvas.height - this.padding * 2) + this.padding;
 
-        this.vx =
-          (Math.random() - 0.5) * 0.6;
+        this.vx = (Math.random() - 0.5) * 0.6;
 
-        this.vy =
-          (Math.random() - 0.5) * 0.6;
+        this.vy = (Math.random() - 0.5) * 0.6;
 
         this.image = new Image();
 
@@ -131,112 +127,75 @@ export default function Skill({theme}) {
       }
 
       update() {
-
         if (!gather) {
-
           this.x += this.vx;
           this.y += this.vy;
 
           const leftLimit = this.padding;
 
-          const rightLimit =
-            canvas.width - this.padding;
+          const rightLimit = canvas.width - this.padding;
 
           const topLimit = this.padding;
 
-          const bottomLimit =
-            canvas.height - this.padding;
+          const bottomLimit = canvas.height - this.padding;
 
           if (this.x <= leftLimit) {
-
             this.x = leftLimit;
 
             this.vx *= -1;
           }
 
           if (this.x >= rightLimit) {
-
             this.x = rightLimit;
 
             this.vx *= -1;
           }
 
           if (this.y <= topLimit) {
-
             this.y = topLimit;
 
             this.vy *= -1;
           }
 
           if (this.y >= bottomLimit) {
-
             this.y = bottomLimit;
 
             this.vy *= -1;
           }
 
           if (mouse.x && mouse.y) {
-
             const dx = this.x - mouse.x;
 
             const dy = this.y - mouse.y;
 
-            const distance =
-              Math.sqrt(dx * dx + dy * dy);
+            const distance = Math.sqrt(dx * dx + dy * dy);
 
             if (distance < mouse.radius) {
+              const force = (mouse.radius - distance) / mouse.radius;
 
-              const force =
-                (mouse.radius - distance) /
-                mouse.radius;
+              this.x += (dx / distance) * force * 5;
 
-              this.x +=
-                (dx / distance) * force * 5;
-
-              this.y +=
-                (dy / distance) * force * 5;
+              this.y += (dy / distance) * force * 5;
             }
           }
-
         } else {
+          const spread = window.innerWidth < 768 ? 130 : 220;
 
-          const spread =
-            window.innerWidth < 768
-              ? 130
-              : 220;
+          this.x += (center.x + (Math.random() - 0.5) * spread - this.x) * 0.03;
 
-          this.x +=
-            (
-              center.x +
-              (Math.random() - 0.5) *
-              spread -
-              this.x
-            ) * 0.03;
-
-          this.y +=
-            (
-              center.y +
-              (Math.random() - 0.5) *
-              spread -
-              this.y
-            ) * 0.03;
+          this.y += (center.y + (Math.random() - 0.5) * spread - this.y) * 0.03;
         }
       }
 
       draw() {
-
         const dx = center.x - this.x;
 
         const dy = center.y - this.y;
 
-        const distance =
-          Math.sqrt(dx * dx + dy * dy);
+        const distance = Math.sqrt(dx * dx + dy * dy);
 
         const animatedWidth =
-          Math.sin(
-            Date.now() * 0.002 +
-            distance * 0.01
-          ) * 1.5 + 1.5;
+          Math.sin(Date.now() * 0.002 + distance * 0.01) * 1.5 + 1.5;
 
         /* line */
 
@@ -256,13 +215,7 @@ export default function Skill({theme}) {
 
         ctx.beginPath();
 
-        ctx.arc(
-          this.x,
-          this.y,
-          this.radius + 6,
-          0,
-          Math.PI * 2
-        );
+        ctx.arc(this.x, this.y, this.radius + 6, 0, Math.PI * 2);
 
         ctx.fillStyle = nodeGlow;
 
@@ -272,13 +225,7 @@ export default function Skill({theme}) {
 
         ctx.beginPath();
 
-        ctx.arc(
-          this.x,
-          this.y,
-          this.radius,
-          0,
-          Math.PI * 2
-        );
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
 
         ctx.fillStyle = nodeFill;
 
@@ -290,13 +237,7 @@ export default function Skill({theme}) {
 
         ctx.beginPath();
 
-        ctx.arc(
-          this.x,
-          this.y,
-          this.radius - 2,
-          0,
-          Math.PI * 2
-        );
+        ctx.arc(this.x, this.y, this.radius - 2, 0, Math.PI * 2);
 
         ctx.clip();
 
@@ -305,7 +246,7 @@ export default function Skill({theme}) {
           this.x - this.radius + 4,
           this.y - this.radius + 4,
           (this.radius - 4) * 2,
-          (this.radius - 4) * 2
+          (this.radius - 4) * 2,
         );
 
         ctx.restore();
@@ -314,42 +255,24 @@ export default function Skill({theme}) {
 
         ctx.fillStyle = textColor;
 
-        ctx.font =
-          window.innerWidth < 768
-            ? "12px Inter"
-            : "14px Inter";
+        ctx.font = window.innerWidth < 768 ? "12px Inter" : "14px Inter";
 
         ctx.textAlign = "center";
 
-        ctx.fillText(
-          this.skill.name,
-          this.x,
-          this.y + this.radius + 18
-        );
+        ctx.fillText(this.skill.name, this.x, this.y + this.radius + 18);
       }
     }
 
-    const nodes = skills.map(
-      (skill) => new Node(skill)
-    );
+    const nodes = skills.map((skill) => new Node(skill));
 
     function drawGrid() {
-
-      const size =
-        window.innerWidth < 768
-          ? 35
-          : 55;
+      const size = window.innerWidth < 768 ? 35 : 55;
 
       ctx.strokeStyle = gridColor;
 
       ctx.lineWidth = 1;
 
-      for (
-        let x = 0;
-        x < canvas.width;
-        x += size
-      ) {
-
+      for (let x = 0; x < canvas.width; x += size) {
         ctx.beginPath();
 
         ctx.moveTo(x, 0);
@@ -359,12 +282,7 @@ export default function Skill({theme}) {
         ctx.stroke();
       }
 
-      for (
-        let y = 0;
-        y < canvas.height;
-        y += size
-      ) {
-
+      for (let y = 0; y < canvas.height; y += size) {
         ctx.beginPath();
 
         ctx.moveTo(0, y);
@@ -378,115 +296,80 @@ export default function Skill({theme}) {
     let animationFrame;
 
     function animate() {
-
-      ctx.clearRect(
-        0,
-        0,
-        canvas.width,
-        canvas.height
-      );
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
 
       drawGrid();
 
       nodes.forEach((node) => {
-
         node.update();
 
         node.draw();
-
       });
 
-      animationFrame =
-        requestAnimationFrame(animate);
+      animationFrame = requestAnimationFrame(animate);
     }
 
     animate();
 
     const handleMouseMove = (e) => {
-
       mouse.x = e.clientX;
       mouse.y = e.clientY;
     };
 
     const handleTouchMove = (e) => {
-
       mouse.x = e.touches[0].clientX;
       mouse.y = e.touches[0].clientY;
     };
 
-    window.addEventListener(
-      "mousemove",
-      handleMouseMove
-    );
+    window.addEventListener("mousemove", handleMouseMove);
 
-    window.addEventListener(
-      "touchmove",
-      handleTouchMove
-    );
+    window.addEventListener("touchmove", handleTouchMove);
 
-    window.addEventListener(
-      "resize",
-      resizeCanvas
-    );
+    window.addEventListener("resize", resizeCanvas);
 
     return () => {
-
       cancelAnimationFrame(animationFrame);
 
-      window.removeEventListener(
-        "mousemove",
-        handleMouseMove
-      );
+      window.removeEventListener("mousemove", handleMouseMove);
 
-      window.removeEventListener(
-        "touchmove",
-        handleTouchMove
-      );
+      window.removeEventListener("touchmove", handleTouchMove);
 
-      window.removeEventListener(
-        "resize",
-        resizeCanvas
-      );
+      window.removeEventListener("resize", resizeCanvas);
     };
-
   }, [gather, isLightTheme]);
 
   return (
-    <section id="skill"  style={{
+    <section
+      id="skill"
+      style={{
         backgroundColor: isLightTheme ? "#f7f7f7" : "#000",
         color: isLightTheme ? "#111" : "#fff",
-       
-      }}>
-      <div className="heading"><img className="heading-img" src="layer.png" alt="" style={{ filter: isLightTheme ? "none" : "brightness(0) invert(1)" }} />
-       <h1 >SKILLS</h1>
+      }}
+    >
+      <div className="heading">
+        <img
+          className="heading-img"
+          src="layer.png"
+          alt=""
+          style={{ filter: isLightTheme ? "none" : "brightness(0) invert(1)" }}
+        />
+        <h1>SKILLS</h1>
       </div>
-     
 
-      <div className="grid-bg" ></div>
+      <div className="grid-bg"></div>
 
-      <canvas
-        ref={canvasRef}
-        className="skill-canvas"
-        
-      />
+      <canvas ref={canvasRef} className="skill-canvas" />
 
-      <div className="heading-wrapper" style={{
-       
-        color: isLightTheme ? "#111" : "#fff",
-       
-      }}>
-
-        <h1
-          className="main-heading"
-          onClick={() =>
-            setGather(!gather)
-          }
-        >
+      <div
+        className="heading-wrapper"
+        style={{
+          color: isLightTheme ? "#111" : "#fff",
+        }}
+      >
+        <h1 className="main-heading" onClick={() => setGather(!gather)}>
           MY TeCH STACK
         </h1>
-
       </div>
-
     </section>
   );
 }

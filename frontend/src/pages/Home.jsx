@@ -1,351 +1,771 @@
-import React, { useEffect, useRef } from 'react'
-import {useGSAP} from '@gsap/react'
-import { ScrollTrigger } from 'gsap/all';
-
-import Typed from 'typed.js'
-import '../styles/home.css';
-import gsap from 'gsap';
-import CursorImgEffect from '../components/CursorImgeffect';
-
-const Home = ({theme}) => {
-  const typingRef = useRef(null)
-   const homeRef = useRef(null);
-  useEffect(()=>{
-    const typed = new Typed(typingRef.current,{strings: ["Full stack developer","MERN stack developer","Backend developer","Frontend developer"],
-      typeSpeed:150,
-      backSpeed:50,
-      loop:true
-
-    })
-
-    return ()=>{
-      typed.destroy()
-    }
-
-  },[])
+import React, { useEffect, useRef } from "react";
+import gsap from "gsap";
+import Typed from "typed.js";
+import "../styles/home.css";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { MotionPathPlugin } from "gsap/MotionPathPlugin";
+import CursorImgEffect from "../components/CursorImgeffect";
 
 
-   const imgArr = [
-        
-    "/dp.jpeg",
-    "/img9.jpeg",
-    
-    "/img11.jpeg",
-    "/img12.jpg",
-    "/img10.jpeg",
-     ]
+gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
+const Some = () => {
+  const webRef = useRef(null);
+  const developerRef = useRef(null);
+  const typedRef = useRef(null);
+  const homeRef = useRef(null);
+  const imgRef = useRef();
+  useEffect(() => {
+    // ============================
+    // TYPED JS
+    // ============================
 
-   const imgRef = useRef()
-   gsap.registerPlugin(ScrollTrigger)
+    const typed = new Typed(typedRef.current, {
+      strings: [
+        "MERN Stack Developer",
+        "Full Stack Developer",
+        "Frontend Developer",
+        "Backend Developer",
+      ],
 
+      typeSpeed: 70,
+      backSpeed: 40,
+      backDelay: 1400,
+      startDelay: 500,
 
-
-// useGSAP(() => {
-//   const mm = gsap.matchMedia();
-
-//   // ================= DESKTOP =================
-//   mm.add("(min-width: 1024px)", () => {
-//     gsap.to(imgRef.current, {
-//       y: 680,
-//       x: -590,
-//       duration: 10,
-//       // scale: 0.5,
-      
-//       width: "250px",
-//       borderRadius: "10px ",
-
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         // markers: true,
-//         start: "top 10%",
-//         end: "top -55%",
-//         scrub: true,
-//         invalidateOnRefresh: true,
-
-//         onUpdate: (elem) => {
-//           const imgIndex = Math.min(
-//             imgArr.length - 1,
-//             Math.floor(elem.progress * imgArr.length)
-//           );
-
-//           imgRef.current.src = imgArr[imgIndex];
-//         },
-//       },
-//     });
-//   });
-  
-
-//   // ================= TABLET =================
-//   mm.add("(min-width: 601px) and (max-width: 1023px)", () => {
-//     gsap.to(imgRef.current, {
-//       y: 450,
-//       x: -250,
-//       duration: 10,
-//       // scale: 0.6,
-//       width: "220px",
-//       borderRadius: "10px 25px",
-
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         markers: false,
-//         start: "top 15%",
-//         end: "top -45%",
-//         scrub: true,
-//         invalidateOnRefresh: true,
-
-//         onUpdate: (elem) => {
-//           const imgIndex = Math.min(
-//             imgArr.length - 1,
-//             Math.floor(elem.progress * imgArr.length)
-//           );
-
-//           imgRef.current.src = imgArr[imgIndex];
-//         },
-//       },
-//     });
-//   });
-
-//   // ================= MOBILE =================
-//   mm.add("(max-width: 600px)", () => {
-//     gsap.to(imgRef.current, {
-//       y: 480,
-//       x: 0,
-//       duration: 10,
-//       // scale: 0.7,
-//       width: "200",
-//       height:"300",
-//       borderRadius: "10px ",
-
-//       scrollTrigger: {
-//         trigger: imgRef.current,
-//         markers: false,
-//         start: "top 20%",
-//         end: "top -40%",
-//         scrub: true,
-//         invalidateOnRefresh: true,
-
-//         onUpdate: (elem) => {
-//           const imgIndex = Math.min(
-//             imgArr.length - 1,
-//             Math.floor(elem.progress * imgArr.length)
-//           );
-
-//           imgRef.current.src = imgArr[imgIndex];
-//         },
-//       },
-//     });
-//   });
-
-//   return () => mm.revert();
-// });
-
-
-
-
-useGSAP(() => {
-  const mm = gsap.matchMedia();
-
-  const getTarget = () => {
-    const img = imgRef.current;
-    const target = document.querySelector("#aboutImageTarget");
-
-    if (!img || !target) {
-      return { x: 0, y: 0 };
-    }
-
-    // Remove current transform temporarily
-    const currentX = gsap.getProperty(img, "x") || 0;
-    const currentY = gsap.getProperty(img, "y") || 0;
-
-    gsap.set(img, {
-      x: 0,
-      y: 0
+      loop: true,
+      showCursor: true,
+      cursorChar: "|",
     });
 
-    const imgRect = img.getBoundingClientRect();
-    const targetRect = target.getBoundingClientRect();
+    // ============================
+    // GSAP
+    // ============================
 
-    const x = targetRect.left - imgRect.left;
-    const y = targetRect.top - imgRect.top;
+    const ctx = gsap.context(() => {
+      // const tl = gsap.timeline()
 
-    // Restore transform
-    gsap.set(img, {
-      x: currentX,
-      y: currentY
+      //   ScrollTrigger.create({
+      //   trigger: homeRef.current,
+      //   start: "top top",
+      //   end: "+=1000",
+      //   pin: true,
+      //   scrub: true,
+      // });
+      gsap.set(imgRef.current, {
+        scale: 0,
+      });
+
+      gsap.to(imgRef.current, {
+        scale: 1,
+        duration: 1.5,
+        opacity: 1,
+      });
+
+      gsap.from(webRef.current, {
+        yPercent: 120,
+        duration: 1.5,
+        ease: "expo.inOut",
+      });
+
+      gsap.from(developerRef.current, {
+        yPercent: 120,
+        duration: 2.5,
+        ease: "expo.inOut",
+      });
+
+      gsap.from(".intro", {
+        x: -50,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.from(".role-box", {
+        x: 50,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.from(".red-circle", {
+        scale: 0,
+        opacity: 0,
+        duration: 1.5,
+        ease: "power3.out",
+      });
+
+      gsap.from(".arrow-svg", {
+        opacity: 0,
+        scale: 0.5,
+        transformOrigin: "center",
+        duration: 1.5,
+      });
     });
-
-    return { x, y };
-  };
-
-
-  // ================= DESKTOP =================
-  mm.add("(min-width: 1024px)", () => {
-
-    const animation = gsap.to(imgRef.current, {
-      x: () => getTarget().x,
-      y: () => getTarget().y,
-
-      duration: 10,
-
-      width: "250px",
-
-      borderRadius: "10px",
-
-      scrollTrigger: {
-        trigger: imgRef.current,
-
-        start: "top 10%",
-        end: "top -55%",
-
-        scrub: true,
-
-        invalidateOnRefresh: true,
-
-        onUpdate: (self) => {
-          const imgIndex = Math.min(
-            imgArr.length - 1,
-            Math.floor(self.progress * imgArr.length)
-          );
-
-          imgRef.current.src = imgArr[imgIndex];
-        }
-      }
-    });
-
-    ScrollTrigger.refresh();
 
     return () => {
-      animation.kill();
+      typed.destroy();
+      ctx.revert();
     };
-  });
-
-
-  // ================= TABLET =================
-  mm.add("(min-width: 601px) and (max-width: 1023px)", () => {
-
-    const animation = gsap.to(imgRef.current, {
-      x: () => getTarget().x,
-      y: () => getTarget().y,
-
-      duration: 10,
-
-      width: "220px",
-
-      borderRadius: "10px 25px",
-
-      scrollTrigger: {
-        trigger: imgRef.current,
-
-        start: "top 15%",
-        end: "top -45%",
-
-        scrub: true,
-
-        invalidateOnRefresh: true,
-
-        onUpdate: (self) => {
-          const imgIndex = Math.min(
-            imgArr.length - 1,
-            Math.floor(self.progress * imgArr.length)
-          );
-
-          imgRef.current.src = imgArr[imgIndex];
-        }
-      }
-    });
-
-    ScrollTrigger.refresh();
-
-    return () => {
-      animation.kill();
-    };
-  });
-
-
-  // ================= MOBILE =================
-  mm.add("(max-width: 600px)", () => {
-
-    gsap.to(imgRef.current, {
-      y: 480,
-      x: 0,
-
-      duration: 10,
-
-      width: "200px",
-      height: "300px",
-
-      borderRadius: "10px",
-
-      scrollTrigger: {
-        trigger: imgRef.current,
-
-        start: "top 20%",
-        end: "top -40%",
-
-        scrub: true,
-
-        invalidateOnRefresh: true,
-
-        onUpdate: (self) => {
-          const imgIndex = Math.min(
-            imgArr.length - 1,
-            Math.floor(self.progress * imgArr.length)
-          );
-
-          imgRef.current.src = imgArr[imgIndex];
-        }
-      }
-    });
-
-  });
-
-
-  return () => mm.revert();
-
-}, []);
-
-
+  }, []);
 
   return (
-    <div id='home' ref={homeRef}  style={{
-        backgroundColor: theme === "light" ? "white" : "black",
-        color: theme === "light" ? "black" : "white",
-       
-      }} >
-      <CursorImgEffect targetRef={homeRef}/>
-      {/* <CursorImgEffect/> */}
-      <div className="left">
-       <h1>Hii </h1>
-       <h1>I'm <span style={{color:"#E8C766"}}>Shatrudhan</span></h1>
-       <h2>I'm a <span ref={typingRef}     className='auto-type'></span></h2>
-       {/* <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias explicabo provident consequatur accusantium voluptatem quisquam nobis reiciendis nulla saepe debitis!</p> */}
-       <div className="btn">
-  
-  <button><a href="#contact">Get in touch</a></button>
-  <button><a href="#about">About Me</a></button>
- </div>
-
-
-       <div className="social-icon">
-        <i class="ri-github-fill"></i>
-        <i class="ri-linkedin-fill"></i>
-        <a href="https://www.instagram.com/snx_8een?igsh=MW81eXhtY2x0ajN3Nw=="> <i class="ri-instagram-line"> </i></a>
-        
-        <i class="ri-telegram-fill"></i>
- </div>
- 
+    <main id="home" className="home" ref={homeRef}>
+     <CursorImgEffect targetRef={homeRef}/>
       
+      {/* =====================================
+          LEFT INTRO
+      ===================================== */}
+
+      <div className="intro">
+        <div className="intro-line">
+          <span></span>
+        </div>
+
+        <p>
+          A dedicated full-stack developer
+          <br />
+          passionate about creating seamless
+          <br />
+          and powerful web applications.
+        </p>
       </div>
 
+      {/* SOCIAL LINK */}
 
-      <div className="right">
-        <img ref={imgRef} src={theme === "light"? "/dp.jpeg" :"/dp-dark.jpeg"} alt="" />
+      <div className="social-icon">
+        <a href="https://github.com/iamsk18">
+          {" "}
+          <i class="ri-github-fill"></i>
+        </a>
+
+        <a href="https://www.linkedin.com/in/iamsk18">
+          <i class="ri-linkedin-fill"></i>
+        </a>
+
+        <a href="https://www.instagram.com/snx_8een?igsh=MW81eXhtY2x0ajN3Nw==">
+          {" "}
+          <i class="ri-instagram-line"> </i>
+        </a>
       </div>
 
+      {/* ------
+          RED CIRCLE
+      ----------------*/}
 
-    </div>
-  )
-}
+      <div className="image-area">
+        <div className="red-circle"></div>
 
-export default Home
+        <div className="outer-circle"></div>
+
+        <img
+          ref={imgRef}
+          className="front-image"
+          src="/sk.png"
+          alt="Shatrudhan Kumar"
+        />
+      </div>
+
+      {/* ====================
+          TYPEWRITER ============== */}
+
+      <div className="developer-info">
+        <span className="iam">I'm a</span>
+
+        <h2>
+          <span ref={typedRef} className="auto-type"></span>
+        </h2>
+
+        <div className="developer-line"></div>
+
+        <div className="developer-items">
+          <span>Build</span>
+          <i></i>
+          <span>Learn</span>
+          <i></i>
+          <span>Create</span>
+          <i></i>
+          <span>Grow</span>
+        </div>
+      </div>
+
+      {/* ===
+          CURVED RED ARROW
+                           ====*/}
+
+      {/* CURVED RED ARROW */}
+
+      {/* ROUND CURVED ARROW */}
+
+      <div className="round-arrow">
+        <svg
+          className="arrow-svg"
+          viewBox="0 0 140 120"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          {/* Main curved arrow */}
+          <path
+            d="
+        M 20 105
+        C 22 82, 31 61, 47 50
+        C 56 44, 66 43, 69 49
+        C 72 55, 66 62, 61 62
+        C 57 62, 58 56, 63 51
+        C 72 42, 87 39, 99 29
+        C 105 24, 111 18, 117 12
+      "
+            fill="none"
+            stroke="#ff1717"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+
+          {/* Arrow head */}
+          <path
+            d="
+        M 101 11
+        C 107 12, 113 12, 120 12
+        C 117 17, 115 22, 113 27
+      "
+            fill="none"
+            stroke="#ff1717"
+            strokeWidth="3"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+
+      {/* 
+          MAIN WEB DEVELOPER */}
+
+      <section className="text-heading">
+        {/* WEB */}
+
+        <div className="heading-wrap web">
+          <h1 ref={webRef}>WEB</h1>
+        </div>
+
+        {/* DEVELOPER */}
+
+        <div className="heading-wrap developer">
+          <h1 ref={developerRef}>
+            <span className="outline">DEVE</span>
+
+            <span className="filled">LOPER</span>
+          </h1>
+        </div>
+      </section>
+
+      {/* =====================================
+          RIGHT SIDE
+      ===================================== */}
+
+      <div className="right-text">
+        <span>BUILD</span>
+
+        <i></i>
+
+        <span>LEARN</span>
+
+        <i></i>
+
+        <span>GROW</span>
+
+        <div className="vertical-line"></div>
+      </div>
+
+      {/* =====================================
+          BOTTOM TAGLINE
+      ===================================== */}
+
+      <div className="tagline">
+        <span></span>
+
+        <p>Turning Ideas Into Real Web Products</p>
+      </div>
+    </main>
+  );
+};
+
+export default Some;
+
+// import React, { useEffect, useRef } from "react";
+// import gsap from "gsap";
+// import Typed from "typed.js";
+// import "./home1.css";
+
+// const Home1 = () => {
+//   const h1Ref = useRef([]);
+//   const typingRef = useRef(null);
+
+//   // Image refs
+//   const imageAreaRef = useRef(null);
+//   const backImageRef = useRef(null);
+//   const revealRef = useRef(null);
+
+//   useEffect(() => {
+//     // ==============================
+//     // TYPED JS
+//     // ==============================
+
+//     const typed = new Typed(typingRef.current, {
+//       strings: [
+//         "Full Stack Developer",
+//         "MERN Stack Developer",
+//         "Backend Developer",
+//         "Frontend Developer",
+//       ],
+
+//       typeSpeed: 80,
+//       backSpeed: 50,
+//       backDelay: 1200,
+//       startDelay: 300,
+
+//       loop: true,
+//       showCursor: true,
+//       cursorChar: "|",
+//     });
+
+//     // ==============================
+//     // GSAP HEADING
+//     // ==============================
+
+//     const ctx = gsap.context(() => {
+//       gsap.from(h1Ref.current, {
+//         yPercent: 220,
+//         duration: 1.6,
+//         ease: "expo.inOut",
+
+//         stagger: {
+//           each: 0.3,
+//           from: "center",
+//         },
+//       });
+//     });
+
+//     // ==============================
+//     // IMAGE MOUSE EFFECT
+//     // ==============================
+
+//     const imageArea = imageAreaRef.current;
+//     const backImage = backImageRef.current;
+//     const reveal = revealRef.current;
+
+//     // GSAP quickTo = smoother mouse movement
+//     const moveX = gsap.quickTo(backImage, "x", {
+//       duration: 0.35,
+//       ease: "power3.out",
+//     });
+
+//     const moveY = gsap.quickTo(backImage, "y", {
+//       duration: 0.35,
+//       ease: "power3.out",
+//     });
+
+//     const revealX = gsap.quickTo(reveal, "--mouse-x", {
+//       duration: 0.25,
+//       ease: "power3.out",
+//     });
+
+//     const revealY = gsap.quickTo(reveal, "--mouse-y", {
+//       duration: 0.25,
+//       ease: "power3.out",
+//     });
+
+//     const handleMouseMove = (e) => {
+//       const rect = imageArea.getBoundingClientRect();
+
+//       const mouseX = e.clientX - rect.left;
+//       const mouseY = e.clientY - rect.top;
+
+//       // =====================================
+//       // FACE POSITION
+//       // =====================================
+
+//       const faceX = rect.width * 0.50;
+//       const faceY = rect.height * 0.28;
+
+//       const distanceX = mouseX - faceX;
+//       const distanceY = mouseY - faceY;
+
+//       const distance = Math.sqrt(
+//         distanceX * distanceX +
+//         distanceY * distanceY
+//       );
+
+//       // =====================================
+//       // FACE AREA
+//       // =====================================
+
+//       const faceRadius = 170;
+
+//       if (distance < faceRadius) {
+
+//         // Mouse movement
+//         const offsetX = distanceX * -0.10;
+//         const offsetY = distanceY * -0.10;
+
+//         moveX(offsetX);
+//         moveY(offsetY);
+
+//         // Circular reveal position
+//         revealX(`${mouseX}px`);
+//         revealY(`${mouseY}px`);
+
+//         gsap.to(reveal, {
+//           opacity: 1,
+//           "--radius": "125px",
+//           duration: 0.4,
+//           ease: "power3.out",
+//         });
+
+//       } else {
+
+//         // Hide reveal
+//         gsap.to(reveal, {
+//           opacity: 0,
+//           "--radius": "0px",
+//           duration: 0.45,
+//           ease: "power3.out",
+//         });
+
+//         moveX(0);
+//         moveY(0);
+//       }
+//     };
+
+//     const handleMouseLeave = () => {
+
+//       gsap.to(reveal, {
+//         opacity: 0,
+//         "--radius": "0px",
+//         duration: 0.5,
+//         ease: "power3.out",
+//       });
+
+//       moveX(0);
+//       moveY(0);
+//     };
+
+//     imageArea.addEventListener(
+//       "mousemove",
+//       handleMouseMove
+//     );
+
+//     imageArea.addEventListener(
+//       "mouseleave",
+//       handleMouseLeave
+//     );
+
+//     // ==============================
+//     // CLEANUP
+//     // ==============================
+
+//     return () => {
+//       typed.destroy();
+//       ctx.revert();
+
+//       imageArea.removeEventListener(
+//         "mousemove",
+//         handleMouseMove
+//       );
+
+//       imageArea.removeEventListener(
+//         "mouseleave",
+//         handleMouseLeave
+//       );
+//     };
+
+//   }, []);
+
+//   return (
+//     <main id="home">
+
+//       {/* =================================
+//           NAVBAR
+//       ================================= */}
+
+//       <nav className="navbar">
+
+//         <div className="logo">
+//           SK<span>.</span>
+//         </div>
+
+//         <div className="nav-links">
+
+//           <a className="active" href="#home">
+//             Home
+//           </a>
+
+//           <a href="#about">
+//             About
+//           </a>
+
+//           <a href="#skills">
+//             Skill
+//           </a>
+
+//           <a href="#education">
+//             Education
+//           </a>
+
+//           <a href="#projects">
+//             Project
+//           </a>
+
+//           <a href="#contact">
+//             Contact
+//           </a>
+
+//         </div>
+
+//         <div className="theme">
+//           ☀
+//         </div>
+
+//         <button className="talk-btn">
+//           Let's Talk
+//           <span>→</span>
+//         </button>
+
+//       </nav>
+
+//       {/* =================================
+//           INTRO
+//       ================================= */}
+
+//       <div className="intro">
+
+//         <div className="intro-line">
+//           <span></span>
+//         </div>
+
+//         <p>
+//           A dedicated full-stack developer
+//           <br />
+
+//           passionate about creating seamless
+//           <br />
+
+//           and powerful web applications.
+//         </p>
+
+//       </div>
+
+//       {/* =================================
+//           HERO IMAGE AREA
+//       ================================= */}
+
+//       <div
+//         className="image-area"
+//         ref={imageAreaRef}
+//       >
+
+//         {/* RED CIRCLE */}
+
+//         <div className="red-circle"></div>
+
+//         {/* OUTER CIRCLE */}
+
+//         <div className="outer-circle"></div>
+
+//         {/* BACK IMAGE */}
+
+//         <div
+//           className="back-image"
+//           ref={backImageRef}
+//         >
+
+//           <img
+//             src="/img3.png"
+//             alt=""
+//           />
+
+//         </div>
+
+//         {/* FRONT IMAGE */}
+
+//         <img
+//           className="front-image"
+//           src="/sk.png"
+//           alt="Shatrudhan"
+//         />
+
+//         {/* MOUSE REVEAL */}
+
+//         <div
+//           className="image-reveal"
+//           ref={revealRef}
+//         >
+
+//           <img
+//             src="/sk-back.png"
+//             alt=""
+//           />
+
+//         </div>
+
+//       </div>
+
+//       {/* =================================
+//           AUTO TYPE
+//       ================================= */}
+
+//       <div className="developer-info">
+
+//         <span className="iam">
+//           I'm a
+//         </span>
+
+//         <h2>
+
+//           <span
+//             ref={typingRef}
+//             className="auto-type"
+//           ></span>
+
+//         </h2>
+
+//         <div className="developer-line"></div>
+
+//         <div className="developer-items">
+
+//           <span>Build</span>
+//           <i></i>
+
+//           <span>Learn</span>
+//           <i></i>
+
+//           <span>Create</span>
+//           <i></i>
+
+//           <span>Grow</span>
+
+//         </div>
+
+//       </div>
+
+//       {/* =================================
+//           MAIN HEADING
+//       ================================= */}
+
+//       <div className="text-heading">
+
+//         <div className="heading-wrap web">
+
+//           <h1
+//             ref={(el) => {
+//               h1Ref.current[0] = el;
+//             }}
+//           >
+//             WEB
+//           </h1>
+
+//         </div>
+
+//         <div className="heading-wrap developer">
+
+//           <h1
+//             ref={(el) => {
+//               h1Ref.current[1] = el;
+//             }}
+//           >
+
+//             <span className="outline">
+//               DEVE
+//             </span>
+
+//             <span className="filled">
+//               LOPER
+//             </span>
+
+//           </h1>
+
+//         </div>
+
+//       </div>
+
+//       {/* =================================
+//           CURVED ARROW
+//       ================================= */}
+
+//       <div className="round-arrow">
+
+//         <svg
+//           viewBox="0 0 160 150"
+//           xmlns="http://www.w3.org/2000/svg"
+//         >
+
+//           <path
+//             d="
+//               M 20 125
+//               C 17 101,
+//                 22 77,
+//                 39 62
+//               C 52 50,
+//                 72 48,
+//                 87 42
+//               C 101 36,
+//                 111 27,
+//                 128 18
+//             "
+//             fill="none"
+//             stroke="#ff1717"
+//             strokeWidth="3"
+//             strokeLinecap="round"
+//           />
+
+//           <path
+//             d="
+//               M 112 17
+//               L 130 18
+//               L 123 34
+//             "
+//             fill="none"
+//             stroke="#ff1717"
+//             strokeWidth="3"
+//             strokeLinecap="round"
+//             strokeLinejoin="round"
+//           />
+
+//         </svg>
+
+//       </div>
+
+//       {/* =================================
+//           RIGHT SIDE
+//       ================================= */}
+
+//       <div className="right-text">
+
+//         <span>BUILD</span>
+
+//         <i></i>
+
+//         <span>LEARN</span>
+
+//         <i></i>
+
+//         <span>GROW</span>
+
+//       </div>
+
+//       {/* =================================
+//           TAGLINE
+//       ================================= */}
+
+//       <div className="tagline">
+
+//         <span></span>
+
+//         Turning Ideas Into Real Web Products
+
+//       </div>
+
+//     </main>
+//   );
+// };
+
+// export default Home1;

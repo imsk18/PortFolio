@@ -1,41 +1,37 @@
-import Navbar from "./components/Navbar"
+import Navbar from "./components/Navbar";
 import Home from "./pages/Home"
-import About from "./pages/About"
-import Skill from "./pages/Skill"
-import ContactForm from "./pages/ContactForm"
-import Education from "./pages/Education"
-import Project from "./pages/Project"
-import Footer from "./pages/Footer"
-import { useState } from "react"
+import About from "./pages/About";
+import Skill from "./pages/Skill";
+import ContactForm from "./pages/ContactForm";
+import Education from "./pages/Education";
+import Project from "./pages/Project";
+import Footer from "./pages/Footer";
+import { useState } from "react";
 
 
 
 function App() {
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light");
 
-  const changeTheme = ()=>{
-    setTheme(theme === "light" ? "dark" : "light")
-  }
-  
-  
+  const changeTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
 
   return (
-    <div >
+    <div>
+      <Navbar theme={theme} changeTheme={changeTheme} />
       
-      
-      <Navbar theme={theme} changeTheme={changeTheme}   />
-      <Home theme={theme}/>
-      <About theme={theme} />
-    
-      <Skill theme={theme}/>
-      <Education theme={theme}/>
-      <Project theme={theme}/>
-      <ContactForm theme={theme}/>
-      <Footer theme={theme}/>
 
+      <Home  theme={theme} />
+      <About theme={theme} />
+
+      <Skill theme={theme} />
+      <Education theme={theme} />
+      <Project theme={theme} />
+      <ContactForm theme={theme} />
+      <Footer theme={theme} />
     </div>
-  )
+  );
 }
 
-export default App
-
+export default App;

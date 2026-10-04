@@ -23,6 +23,7 @@ const Education = ({ theme }) => {
   /* ==========================================
      RESPONSIVE CHECK
   ========================================== */
+  const homeRef = useRef(null)
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 600);
@@ -40,52 +41,83 @@ const Education = ({ theme }) => {
     const university = universityRef.current;
     const school = schoolRef.current;
     if (!section || !university || !school) return;
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        university,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top center",
-            end: "top center",
-            scrub: 1.5,
-            markers: false,
-          },
-        },
-      );
-      gsap.fromTo(
-        school,
-        {
-          opacity: 0,
-          y: 100,
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top center",
-            end: "top center",
-            scrub: 1.5,
-            markers: false,
-          },
-        },
-      );
-    }, section);
-    return () => {
-      ctx.revert();
-    };
-  }, []);
+
+    
+
+  const ctx = gsap.context(() => {
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: sectionRef.current,
+        start: "top top",
+        end: "+=1200",
+        pin: true,
+        scrub: 1.5,
+        markers: false,
+      },
+    });
+
+    // School card bottom se upar aayega
+    tl.fromTo(
+      schoolRef.current,
+      {
+        yPercent: 100,
+      },
+      {
+        yPercent: 0,
+        ease: "none",
+      }
+    );
+  }, sectionRef);
+
+  return () => ctx.revert();
+}, []);
+
+  //   const ctx = gsap.context(() => {
+  //     gsap.fromTo(
+  //       university,
+  //       {
+  //         opacity: 0,
+  //         y: 100,
+  //       },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top center",
+  //           end: "top center",
+  //           scrub: 1.5,
+  //           markers: false,
+  //         },
+  //       },
+  //     );
+  //     gsap.fromTo(
+  //       school,
+  //       {
+  //         opacity: 0,
+  //         y: 100,
+  //       },
+  //       {
+  //         opacity: 1,
+  //         y: 0,
+  //         duration: 1,
+  //         ease: "power2.out",
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top center",
+  //           end: "top center",
+  //           scrub: 1.5,
+  //           markers: false,
+  //         },
+  //       },
+  //     );
+  //   }, section);
+  //   return () => {
+  //     ctx.revert();
+  //   };
+  // }, []);
   /* ==========================================
      CALCULATE WINDOW
   ========================================== */
