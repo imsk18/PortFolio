@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Typed from "typed.js";
-import "../styles/home.css";
+import "../styles/Home.css";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import CursorImgEffect from "../components/CursorImgeffect";
@@ -172,7 +172,7 @@ const Some = () => {
       <div className="developer-info">
         <span className="iam">I'm a</span>
 
-        <h2>
+        <h2 >
           <span ref={typedRef} className="auto-type"></span>
         </h2>
 

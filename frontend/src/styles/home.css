@@ -592,30 +592,7 @@ body {
    /* SMALL MOBILE */
 
 
-@media (max-width: 400px) {
-  .developer-info {
-    width: calc(100% - 24px);
-  }
 
-  .developer-info h2 {
-    padding: 0 15px;
-    font-size: 20px;
-  }
-
-  .developer-info h2::before,
-  .developer-info h2::after {
-    height: 34px;
-  }
-
-  .developer-items {
-    font-size: 14px;
-  }
-
-  .developer-items i {
-    width: 5px;
-    height: 5px;
-  }
-}
 
  /* HEADINGS */
 
@@ -780,7 +757,18 @@ body {
    RESPONSIVE
 ========================================= */
 
-@media (max-width: 1200px) {
+@media (min-width:1600px) {
+  .image-area{
+    top: 70%;
+    /* bottom: 0%; */
+  }
+  .text-heading{
+    top: 60%;
+  }
+  
+}
+
+@media (max-width: 1500px) {
   .navbar {
     width: 82%;
   }
@@ -796,6 +784,7 @@ body {
 
   .image-area {
     width: 570px;
+    top: 75%;
   }
 }
 
@@ -828,7 +817,7 @@ body {
   .image-area {
     width: 500px;
     height: 650px;
-    top: 48%;
+    /* top: 48%; */
   }
 
   .developer-info {
@@ -860,103 +849,7 @@ body {
   }
 }
 
-@media (max-width: 600px) {
-  #home {
-    height: 100svh;
-    min-height: 700px;
-  }
 
-  .navbar {
-    height: 60px;
-    padding: 0 18px;
-  }
-
-  .logo {
-    font-size: 27px;
-  }
-
-  .talk-btn {
-    padding: 11px 17px;
-    font-size: 13px;
-  }
-
-  .theme {
-    display: none;
-  }
-
-  .intro {
-    top: 19%;
-    left: 6%;
-  }
-
-  .intro-line {
-    margin-right: 15px;
-  }
-
-  .intro p {
-    font-size: 12px;
-  }
-
-  .image-area {
-    width: 380px;
-    height: 530px;
-    top: 47%;
-  }
-
-  .red-circle {
-    width: 220px;
-    height: 220px;
-  }
-
-  .outer-circle {
-    width: 340px;
-    height: 340px;
-  }
-
-  .developer-info {
-    top: 57%;
-    width: 260px;
-  }
-
-  .developer-info h2 {
-    font-size: 19px;
-  }
-
-  .iam {
-    font-size: 17px;
-  }
-
-  .developer-items {
-    gap: 10px;
-    font-size: 12px;
-  }
-
-  .text-heading {
-    top: 67%;
-  }
-
-  .heading-wrap.web {
-    left: 5%;
-  }
-
-  .heading-wrap.web h1 {
-    font-size: 80px;
-  }
-
-  .heading-wrap.developer {
-    left: 13%;
-    top: 70px;
-  }
-
-  .heading-wrap.developer h1 {
-    font-size: 65px;
-    letter-spacing: -4px;
-  }
-
-  .tagline {
-    display: none;
-  }
-}
 
 /* 
    MOBILE HOME — FINAL RESPONSIVE LAYOUT */
@@ -1198,7 +1091,7 @@ body {
 .text-heading {
   position: absolute;
   /* top: 650px; */
-  left: 0;
+  left: -5%;
   width: 100%;
   margin-top: 30%;
   /* z-index: ; */
@@ -1206,17 +1099,17 @@ body {
 
 .heading-wrap.web {
   position: absolute;
-  left: -3%;
+  /* left: -3%; */
   /* right: 10%; */
   top: 0;
 
 }
 
 .heading-wrap.web h1 {
-  font-size: clamp(60px, 21vw, 10px);
+ font-size: clamp(64px, 8vw, 60px);
   line-height: 0.78;
   letter-spacing: -5px;
-  font-family: 5px;
+  /* font-family: 5px; */
 }
 .developer{
   /* right: 10%; */
@@ -1258,117 +1151,19 @@ body {
 .tagline {
   display: none;
 }
+}
 
+@media (min-height:900px) {
+  .text-heading .web{
+    /* bottom: 20%; */
+
+  }
+  .image-area{
+    top: 55%;
+  }
+  
+}
 
    /* VERY SMALL PHONES */
 
 
-@media (max-width: 380px) {
-  #home {
-    min-height: 980px;
-  }
-
-  .navbar {
-    width: calc(100% - 22px);
-    top: 12px;
-  }
-
-  .logo {
-    font-size: 19px;
-  }
-
-  .talk-btn {
-    padding: 9px 13px;
-    font-size: 11px;
-  }
-
-  /* INTRO */
-
-  .intro {
-    top: 105px;
-    left: 16px;
-    width: calc(100% - 32px);
-  }
-
-  .intro-line {
-    height: 72px;
-    margin-right: 12px;
-  }
-
-  .intro p {
-    font-size: 13px;
-  }
-
-  /* TYPEWRITER */
-
-  .developer-info {
-    top: 220px;
-    width: calc(100% - 30px);
-  }
-
-  .iam {
-    font-size: 16px;
-  }
-
-  .developer-info h2 {
-    padding: 0 13px;
-    font-size: 18px;
-  }
-
-  .developer-info h2::before,
-  .developer-info h2::after {
-    height: 34px;
-  }
-
-  .developer-items {
-    font-size: 12px;
-  }
-
-  .developer-items i {
-    width: 5px;
-    height: 5px;
-  }
-
-  /* IMAGE */
-
-  .image-area {
-    top: 365px;
-    width: 340px;
-    height: 500px;
-  }
-
-  .red-circle {
-    width: 190px;
-    height: 190px;
-  }
-
-  .outer-circle {
-    width: 290px;
-    height: 290px;
-  }
-
-  /* HEADING */
-
-  .text-heading {
-    top: 600px;
-  }
-
-  .heading-wrap.web {
-    left: 6%;
-  }
-
-  .heading-wrap.web h1 {
-    font-size: 67px;
-    letter-spacing: -4px;
-  }
-
-  .heading-wrap.developer {
-    left: 7%;
-    top: 65px;
-  }
-
-  .heading-wrap.developer h1 {
-    font-size: 43px;
-    letter-spacing: -2px;
-  }
-}}
