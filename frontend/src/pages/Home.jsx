@@ -166,6 +166,10 @@ const Some = () => {
         />
       </div>
 
+      <div className="img-cover">
+        
+      </div>
+
       {/* ====================
           TYPEWRITER ============== */}
 
