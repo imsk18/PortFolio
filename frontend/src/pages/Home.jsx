@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
 import Typed from "typed.js";
-import "../styles/Home.css";
+
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { MotionPathPlugin } from "gsap/MotionPathPlugin";
 import CursorImgEffect from "../components/CursorImgeffect";
