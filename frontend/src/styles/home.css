@@ -280,14 +280,14 @@ body {
   cursor: default;
 }
 
-.img-cover {
+/* .img-cover {
   position: absolute;
   width: 100%;
   height: 30vh;
   background: linear-gradient(transparent, black);
   bottom: 0;
   z-index: 10;
-}
+} */
 
 /* =========================================
    RED CIRCLE
@@ -522,45 +522,7 @@ body {
 
 /* MOBILE */
 
-@media (max-width: 600px) {
-  /* .developer-info {
-    left: 50%;
-    top: 32%;
-    width: calc(100% - 30px);
-    max-width: 340px;
-    transform: translateX(-50%);
-  } */
 
-  .iam {
-    /* margin-bottom: 10px; */
-    /* font-size: 18px; */
-  }
-
-  .developer-info h2 {
-    padding: 0 18px;
-    font-size: clamp(21px, 6vw, 27px);
-  }
-
-  .developer-info h2::before,
-  .developer-info h2::after {
-    width: 2px;
-    height: 38px;
-  }
-
-  .developer-line {
-    margin-top: 13px;
-  }
-
-  .developer-items {
-    margin-top: 13px;
-    font-size: clamp(15px, 4.5vw, 18px);
-  }
-
-  .developer-items i {
-    width: 6px;
-    height: 6px;
-  }
-}
 
 /* SMALL MOBILE */
 
