@@ -21,7 +21,7 @@
   position: relative;
   z-index: 100;
   will-change: transform;
-  background-color: red;
+  background-color:#ff171787 ;
 }
 .Arrow {
   transform-origin: center center;

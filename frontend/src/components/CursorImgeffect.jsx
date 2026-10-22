@@ -73,8 +73,8 @@ const CursorImgEffect = ({ targetRef }) => {
         position: absolute;
     left: ${x}px;
     top: ${y}px;
-    width: 120px;
-    height: 110px;
+    // width: 30px;
+    // height: 30px;
     object-fit: cover;
     border-radius: 12px;
     pointer-events: none;

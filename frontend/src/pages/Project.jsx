@@ -63,60 +63,9 @@ const projectCards = [
     github: "https://github.com/imsk18/portfolio",
   },
 
-  {
-    title: "E-Commerce Website",
-    img: "/u.jpg",
-    desc: "Full stack shopping website.",
+  
 
-    tech: [
-      {
-        name: "React",
-        icon: "/skill-icons/React.svg",
-        color: "#61DAFB",
-      },
-      {
-        name: "Express",
-        icon: "/skill-icons/Express.svg",
-        color:"#000000"
-      },
-      {
-        name: "MongoDB",
-        icon: "/skill-icons/MongoDB.svg",
-        color:"#47A248"
-      },
-    ],
-
-    live: "https://your-live-link.com",
-    github: "https://github.com/yourusername/ecommerce",
-  },
-
-  {
-    title: "E-Commerce Website",
-    img: "/project-img/img1.png",
-    desc: "Full stack shopping website.",
-
-    tech: [
-      {
-        name: "React",
-        icon: "/skill-icons/React.svg",
-        color:"#61DAFB"
-      },
-      
-      {
-        name: "Express",
-        icon: "/skill-icons/Express.svg",
-        color:"#000000"
-      },
-      {
-        name: "MongoDB",
-        icon: "/skill-icons/MongoDB.svg",
-        color:"#47A248"
-      },
-    ],
-
-    live: "https://luxestore-1-or2j.onrender.com/",
-    github: "https://github.com/yourusername/ecommerce",
-  },
+  
 ];
 
 const Project = ({ theme }) => {

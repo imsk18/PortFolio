@@ -215,7 +215,7 @@ const Education = ({ theme }) => {
       ======================================== */}
       <div className="university" ref={universityRef}>
         <div className="u-img">
-          <img src="/u.jpg" alt="Maharishi Markandeshwar University" />
+          <img src="/uni.jpeg" alt="Maharishi Markandeshwar University" />
         </div>
         <div className="u-info">
           <h2>Bachelor of Computer Application-BCA</h2>

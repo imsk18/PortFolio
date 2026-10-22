@@ -67,8 +67,8 @@
 
 .trail-img {
   position: absolute;
-  width: 200px;
-  height: 400px;
+  /* width: 200px;
+  height: 100px; */
   object-fit: cover;
   border-radius: 10px;
   pointer-events: none;

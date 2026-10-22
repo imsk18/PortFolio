@@ -1,40 +1,58 @@
-import React from "react";
+import React,{useState} from "react";
 import "../styles/about.css";
 import ScrollingLine from "../components/ScrollingLine";
 import CursorImgEffect from "../components/CursorImgeffect";
 
+
 const About = ({ theme }) => {
+const [position, setPosition] = useState({ x: -500, y: -500 });
+
+const handleMouseMove = (e) => {
+  const rect = e.currentTarget.getBoundingClientRect();
+
+  setPosition({
+    x: e.clientX - rect.left,
+    y: e.clientY - rect.top
+  });
+};
+
+
+
+
+
   return (
     <div
+    
       id="about"
       style={{
         backgroundColor: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
       }}
     >
-      <CursorImgEffect/>
+      {/* <CursorImgEffect/> */}
       <div className="header">
         <h1 className="a-h1">
           <i class="ri-user-fill"></i> About me
         </h1>
       </div>
 
-      {
-        <div className="img-container">
-          <div className="right-img">
-            <img src="./public/s.jpg" alt="" />
-            <img src="./public/s.jpg" alt="" />
-          </div>
+     <div className="img-container">
+  <div className="back-img">
+    <img className="back" src="./b.png" alt="" />
+  </div>
 
-          {/* <div className="left-img">
-       
-         <img src="./public/s.jpg" alt="" />
-        </div> */}
-          <div className="left-img">
-            <img id="aboutImageTarget" src="/s.jpg" alt="" />
-          </div>
-        </div>
-      }
+  <div
+    className="front-img"
+    onMouseMove={handleMouseMove}
+    onMouseLeave={() => setPosition({ x: -500, y: -500 })}
+    style={{
+      "--x": `${position.x}px`,
+      "--y": `${position.y}px`
+    }}
+  >
+    <img className="front" src="./sk.png" alt="" />
+  </div>
+</div>
 
       <div className="about-info">
         <div className="upper">
