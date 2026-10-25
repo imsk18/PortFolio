@@ -6,6 +6,7 @@ import { Rnd } from "react-rnd";
 import "../styles/education.css";
 gsap.registerPlugin(ScrollTrigger);
 const TOUR_URL = "https://www.mmumullana.org/360_view/";
+
 const Education = ({ theme }) => {
   const sectionRef = useRef(null);
   const universityRef = useRef(null);

@@ -2,15 +2,21 @@
 #contact {
   min-height: 100vh;
 
-  background: linear-gradient(
+ 
+
+  padding: 100px 20px;
+}
+.form-page.dark{
+  background: #111;
+}
+.form-page.light{
+   background: linear-gradient(
     to bottom,
     rgba(74, 132, 128, 0.915) 0%,
     rgb(200, 216, 221) 50%,
     rgb(226, 224, 224),
     rgb(240, 239, 239) 100%
   );
-
-  padding: 100px 20px;
 }
 
 .contact-header {
@@ -57,6 +63,9 @@
   padding: 30px ;
   position: relative;
 }
+.info-item.dark{
+  color: white;
+}
 
 .contact-info h2 {
   /* font-size: 2rem; */
@@ -78,9 +87,9 @@
 
   margin-bottom: 10px;
 }
-.info-item span {
+/* .info-item span {
   color: black;
-}
+} */
 
 .info-item i {
   font-size: 22px;

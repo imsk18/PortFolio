@@ -34,9 +34,9 @@
     color: blue;
 }
 
-.info span a {
+/* .info span a {
     color:black;
-}
+} */
 
 
 
@@ -91,6 +91,15 @@
   );
 } 
 
+.cover{
+    height: 30vh;
+    width: 100%;
+    background: linear-gradient(transparent 50%,white 80%);
+    position: absolute;
+    top: 50%;
+    z-index: 5;
+}
+
 
 
 
@@ -121,6 +130,9 @@ a {
         padding-top: 15vh;
         transform: none;
     }
+    .back-img,.front-img{
+        top: 30%;
+    }
 
     .about-info {
         width: 100vw;
@@ -128,6 +140,8 @@ a {
         padding-inline: 1rem;
         padding-bottom: 20vh;
         transform: none;
+        margin-top: 50%;
+        
     }
 }
 

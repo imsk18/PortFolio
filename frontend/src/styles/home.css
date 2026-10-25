@@ -30,6 +30,10 @@ body {
   /* min-height: 750px; */
   overflow: hidden;
   color: white;
+  
+}
+
+.home.light{
   background: linear-gradient(
     180deg,
     #ffffff 0%,
@@ -42,7 +46,11 @@ body {
     #151515 79%,
     #050505 92%,
     #000000 100%
-  );
+  ); 
+}
+
+.home.dark{
+  background: black;
 }
 
 .home {
@@ -71,11 +79,28 @@ body {
   /* border-radius: 50px; */
 }
 
+#navbar.nav.light {
+  border-bottom: 1px solid #010405bf;
+}
+
+#navbar.nav.dark {
+  border-bottom: 1px solid #ffffffbf;
+}
+
+
 #navbar button {
   background-color: transparent;
   border-bottom: none;
   color: rgb(29, 29, 33);
   font-size: 1rem;
+}
+
+.all-links.light a {
+  color: black;
+}
+
+.all-links.dark a {
+  color: white;
 }
 
 .all-links {
@@ -133,6 +158,22 @@ body {
   color: #050505;
   margin-right: auto;
   letter-spacing: -2px;
+}
+
+.logo h2 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+
+.logo.light h2 {
+  color: #ff1717;
+}
+
+.logo.dark h2 {
+  color: white;
+}
+.ri-moon-fill{
+  color: white;
 }
 
 .logo span {

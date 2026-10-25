@@ -72,41 +72,17 @@ function Contact({theme}) {
   };
   return (
     
-    // <section id="contact"  style={{
-    //     backgroundColor: isLightTheme ? "#fff" : "#000",
-    //     color: isLightTheme ? "#111" : "#fff",
-    //     '--contact-text-color': isLightTheme ? "#111" : "#fff",
-    //     '--contact-label-color': isLightTheme ? "#666" : "#bdbdbd",
-    //     '--contact-border-color': isLightTheme ? "#d9d9d9" : "#666",
-    //     '--contact-accent-color': isLightTheme ? "#00b8b8" : "#4dd0d0",
-    //   }}>
-
-    <section
-    id="contact"
-    style={{
+    <section id="contact"  className={`form-page ${theme}`}
+     style={{
+        backgroundColor: isLightTheme ? "#fff" : "#000",
         color: isLightTheme ? "#111" : "#fff",
+        '--contact-text-color': isLightTheme ? "#111" : "#fff",
+        '--contact-label-color': isLightTheme ? "#666" : "#bdbdbd",
+        '--contact-border-color': isLightTheme ? "#d9d9d9" : "#666",
+        '--contact-accent-color': isLightTheme ? "#00b8b8" : "#4dd0d0",
+      }}>
 
-        "--contact-bg": isLightTheme
-            ? `linear-gradient(
-                to bottom,
-                rgba(74, 132, 128, 0.915) 0%,
-                rgb(200, 216, 221) 50%,
-                rgb(226, 224, 224) 75%,
-                rgb(240, 239, 239) 100%
-            )`
-            : `linear-gradient(
-                to bottom,
-                #000000 0%,
-                #050505 50%,
-                #0a0a0a 100%
-            )`,
-
-        "--contact-text-color": isLightTheme ? "#111" : "#fff",
-        "--contact-label-color": isLightTheme ? "#666" : "#bdbdbd",
-        "--contact-border-color": isLightTheme ? "#d9d9d9" : "#444",
-        "--contact-accent-color": isLightTheme ? "#00b8b8" : "#4dd0d0",
-    }}
->
+  
  <ToastContainer />
       <div className="contact-header">
         <h1>
@@ -133,7 +109,7 @@ function Contact({theme}) {
 Feel free to reach out. I'd love to hear from you.
           </p>
 
-          <div className="info-item">
+          <div className={`info-item ${theme}`}>
             <i className="ri-phone-fill"></i>
             <span>+91 9693375864</span>
           </div>

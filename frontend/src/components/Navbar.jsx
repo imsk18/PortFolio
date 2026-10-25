@@ -7,10 +7,13 @@ const Navbar = ({theme , changeTheme}) => {
     setMenuOpen(!menuOpen)
   }
   return (
-    <div id='navbar'>
-        <div className="logo"><h2 style={{color:'black', fontWeight:400,fontSize:"2rem"}}>SK.</h2></div>
+<div id="navbar" className={`nav ${theme}`}>
+        <div className={`logo ${theme}`}>
+  <h2>SK.</h2>
+</div>
         
-        <div className= {`all-links ${menuOpen ? "active" : ""}`}>
+         <div className={`all-links ${menuOpen ? "active" : ""} ${theme}`}>
+          
             <a href="#home"  onClick={()=>setMenuOpen(false)}>HOME</a>
             <a href="#about" onClick={()=>setMenuOpen(false)}>ABOUT</a>
             <a href="#skill" onClick={()=>setMenuOpen(false)}>SKILL</a>

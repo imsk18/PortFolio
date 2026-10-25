@@ -50,8 +50,15 @@ const handleMouseMove = (e) => {
       "--y": `${position.y}px`
     }}
   >
-    <img className="front" src="./sk.png" alt="" />
+    <img className="front" src="./sk.png" alt=" Shatrudhan kumar" />
   </div>
+
+<div
+  className="cover"
+  style={{
+    background: `linear-gradient(transparent 50%, ${theme === "light" ? "white" : "black"} 80%)`,
+  }}
+></div>
 </div>
 
       <div className="about-info">
@@ -67,12 +74,18 @@ const handleMouseMove = (e) => {
             solutions.
           </p>
         </div>
-        <div className="info">
+        <div className="info"   >
           <span>
-            place: <a href="">Bihar-India-845301</a>
+            place: <a href=""  style={{
+        Color: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+      }}>Bihar-India-845301</a>
           </span>
           <span>
-            email: <a href="">kumarshatrudhan94263@gmail.com</a>
+            email: <a href="" style={{
+        Color: theme === "light" ? "white" : "black",
+        color: theme === "light" ? "black" : "white",
+      }}>kumarshatrudhan94263@gmail.com</a>
           </span>
         </div>
       </div>
