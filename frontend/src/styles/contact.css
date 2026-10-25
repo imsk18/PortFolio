@@ -201,14 +201,14 @@ button:hover {
 
   #contact {
     padding: 70px 15px;
-
+/* 
     background: linear-gradient(
       to bottom,
       #dcecf0 0%,
       #dcecf0 30%,
       #f5f5f5 30%,
       #f5f5f5 100%
-    );
+    ); */
   }
 
   .contact-header h1 {

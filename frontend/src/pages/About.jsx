@@ -64,7 +64,7 @@ const handleMouseMove = (e) => {
       <div className="about-info">
         <div className="upper">
           <h2>I'm Shatrudhan</h2>
-          <h4>fullstack developer</h4>
+          <h4>MERN Stack developer</h4>
         </div>
         <div className="middle">
           <p>

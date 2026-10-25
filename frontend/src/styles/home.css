@@ -212,6 +212,8 @@ body {
   border-radius: 10px;
 }
 
+
+
 /* THEME */
 
 .theme {
@@ -846,7 +848,10 @@ body {
     /* height: auto; */
     overflow: hidden;
 
-    background: linear-gradient(
+ 
+  }
+  .home.light{
+       background: linear-gradient(
       180deg,
       #ffffff 0%,
       #d9d9d9 12%,
@@ -855,6 +860,9 @@ body {
       #090909 72%,
       #000000 100%
     );
+  }
+  .home.dark{
+    background: black;
   }
 
   /* =======================================================
@@ -895,6 +903,9 @@ body {
     transition: 0.3s linear;
     font-weight: 700;
   }
+  .all-links.dark{
+    background-color: black;
+  }
   .all-links a {
     color: #0b0c0c;
   }
@@ -922,6 +933,10 @@ body {
     transition: 0.3s;
     font-size: 40px;
   }
+  .menu-icon.dark span{
+  /* color: white; */
+  background-color: #fff;
+}
 
   /* =======================================================
      01 — INTRO PARAGRAPH
