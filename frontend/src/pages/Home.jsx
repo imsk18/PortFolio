@@ -8,7 +8,7 @@ import CursorImgEffect from "../components/CursorImgeffect";
 
 gsap.registerPlugin(ScrollTrigger, MotionPathPlugin);
 
-const Home = ({theme}) => {
+const Home = ({ theme }) => {
   const webRef = useRef(null);
   const developerRef = useRef(null);
   const typedRef = useRef(null);

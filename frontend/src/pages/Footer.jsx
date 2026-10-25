@@ -61,12 +61,12 @@ const Footer = ({ theme }) => {
 
           <p>
             <i className="ri-phone-fill"></i>
-            +91 969XXXX864
+            +91 9693375864
           </p>
 
           <p>
             <i className="ri-mail-fill"></i>
-            kumarshatrudhan94263@gmail.com
+           hello.sk8een@gmail.com
           </p>
 
           <div className="social-icons">

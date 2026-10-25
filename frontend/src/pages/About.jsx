@@ -85,7 +85,7 @@ const handleMouseMove = (e) => {
             email: <a href="" style={{
         Color: theme === "light" ? "white" : "black",
         color: theme === "light" ? "black" : "white",
-      }}>kumarshatrudhan94263@gmail.com</a>
+      }}>hello.sk8een@gmail.com</a>
           </span>
         </div>
       </div>

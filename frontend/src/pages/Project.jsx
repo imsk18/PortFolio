@@ -38,7 +38,7 @@ const projectCards = [
   {
     title: "Portfolio Website",
     img: "/project-img/img2.png",
-    desc: "Modern responsive portfolio website.",
+    desc: "My personal portfolio website where I showcase my skills and projects.",
 
     tech: [
       {
